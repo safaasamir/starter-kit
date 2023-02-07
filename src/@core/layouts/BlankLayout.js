@@ -7,6 +7,7 @@ import { useSkin } from "@hooks/useSkin";
 
 // ** Third Party Components
 import classnames from "classnames";
+import NavbarSearch from "./components/navbar/NavbarSearch";
 
 const BlankLayout = () => {
   // ** States

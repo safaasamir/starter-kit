@@ -4,7 +4,7 @@ import "@styles/base/core/menu/menu-types/vertical-menu2.scss";
 const SpinnerComponent = () => {
   return (
     <div className="fallback-spinner app-loader">
-      <h2 className="fallback-logo  brand-text">Waslna</h2>
+      <h2 className="fallback-logo  brand-text text-dark">Waslna</h2>
       <div className="loading">
         <div className="effect-1 effects"></div>
         <div className="effect-2 effects"></div>

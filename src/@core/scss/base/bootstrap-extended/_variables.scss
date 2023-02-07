@@ -29,8 +29,9 @@ $green: #28c76f !default; //$success
 $blue: #00cfe8 !default; //$info
 $orange: #ff9f43 !default; //$warning
 $red: #ea5455 !default; //$danger
+$yelloworange:#FEC628 !default;
 
-$primary: $purple !default;
+//$primary: $purple !default;
 $secondary: #82868b !default;
 $success: $green !default;
 $danger: $red !default;
@@ -38,6 +39,7 @@ $info: $blue !default;
 $warning: $orange !default;
 $light: $gray-50 !default;
 $dark: #4b4b4b !default;
+$primary:$yelloworange !default;
 
 $min-contrast-ratio: 3 !default;
 

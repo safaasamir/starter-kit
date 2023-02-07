@@ -1,36 +1,37 @@
 // ** React Imports
-import { Fragment, lazy } from "react";
-import { Navigate } from "react-router-dom";
+import { Fragment, lazy } from "react"
+import { Navigate } from "react-router-dom"
 // ** Layouts
-import BlankLayout from "@layouts/BlankLayout";
-import VerticalLayout from "@src/layouts/VerticalLayout";
-import HorizontalLayout from "@src/layouts/HorizontalLayout";
-import LayoutWrapper from "@src/@core/layouts/components/layout-wrapper";
+import BlankLayout from "@layouts/BlankLayout"
+import VerticalLayout from "@src/layouts/VerticalLayout"
+import HorizontalLayout from "@src/layouts/HorizontalLayout"
+import LayoutWrapper from "@src/@core/layouts/components/layout-wrapper"
 
 // ** Route Components
-import PublicRoute from "@components/routes/PublicRoute";
+import PublicRoute from "@components/routes/PublicRoute"
 
 // ** Utils
-import { isObjEmpty } from "@utils";
+import { isObjEmpty } from "@utils"
 
 const getLayout = {
   blank: <BlankLayout />,
   vertical: <VerticalLayout />,
-  horizontal: <HorizontalLayout />,
-};
+  horizontal: <HorizontalLayout />
+}
 
 // ** Document title
-const TemplateTitle = "%s - Vuexy React Admin Template";
+const TemplateTitle = "%s - Vuexy React Admin Template"
 
 // ** Default Route
-const DefaultRoute = "/home";
+const DefaultRoute = "/home"
 
-const Home = lazy(() => import("../../views/Home"));
-const SecondPage = lazy(() => import("../../views/SecondPage"));
-const Login = lazy(() => import("../../views/Login"));
-const Register = lazy(() => import("../../views/Register"));
-const ForgotPassword = lazy(() => import("../../views/ForgotPassword"));
-const Error = lazy(() => import("../../views/Error"));
+const Home = lazy(() => import("../../views/Home"))
+const SchoolPage = lazy(() => import("../../views/SchoolPage"))
+const Login = lazy(() => import("../../views/Login"))
+const Register = lazy(() => import("../../views/Register"))
+const ForgotPassword = lazy(() => import("../../views/ForgotPassword"))
+const Error = lazy(() => import("../../views/Error"))
+const Parents = lazy(() => import("../../views/Parent"))
 
 // ** Merge Routes
 const Routes = [
@@ -41,11 +42,15 @@ const Routes = [
   },
   {
     path: "/home",
-    element: <Home />,
+    element: <Home />
   },
   {
-    path: "/second-page",
-    element: <SecondPage />,
+    path: "/school-page",
+    element: <SchoolPage />,
+  },
+  {
+    path: "/parent-page",
+    element: <Parents />,
   },
   {
     path: "/login",
