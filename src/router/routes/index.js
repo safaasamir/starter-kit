@@ -27,8 +27,8 @@ const DefaultRoute = "/home"
 
 const Home = lazy(() => import("../../views/Home"))
 const SchoolPage = lazy(() => import("../../views/SchoolPage"))
-const Login = lazy(() => import("../../views/Login"))
-const Register = lazy(() => import("../../views/Register"))
+const Login = lazy(() => import("../../views/pages/authentication/Login"))
+const Register = lazy(() => import("../../views/pages/authentication/Register"))
 const ForgotPassword = lazy(() => import("../../views/ForgotPassword"))
 const Error = lazy(() => import("../../views/Error"))
 const Parents = lazy(() => import("../../views/Parent"))

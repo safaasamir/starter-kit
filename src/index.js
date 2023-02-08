@@ -41,12 +41,16 @@ import "./assets/scss/style.scss";
 
 // ** Service Worker
 import * as serviceWorker from "./serviceWorker";
+import axios from 'axios';
 
 // ** Lazy load app
 const LazyApp = lazy(() => import("./App"));
 
 const container = document.getElementById("root");
 const root = createRoot(container);
+
+axios.defaults.baseURL = 'http://grabt.restart-technology.com/api';
+// axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 root.render(
   <BrowserRouter>

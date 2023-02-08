@@ -70,7 +70,7 @@ export default class JwtService {
 
   onAccessTokenFetched(accessToken) {
     this.subscribers = this.subscribers.filter((callback) =>
-      callback(accessToken)
+       callback(accessToken)
     );
   }
 
