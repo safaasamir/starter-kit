@@ -2,7 +2,7 @@
 import { Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-
+import "mdb-react-ui-kit/dist/css/mdb.min.css "
 // ** Redux Imports
 import { store } from "./redux/store";
 import { Provider } from "react-redux";

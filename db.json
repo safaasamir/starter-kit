@@ -1,0 +1,202 @@
+{"users":[
+  {
+    "name": "hend",
+    "email": "john@gmail.com",
+    "phone": "9632587411",
+    "address": "uk",
+    "id":1,
+    "statue":"Active"
+  },
+  {
+      "name": "sara",
+      "email": "sara@gmail.com",
+      "phone": "9632587411",
+      "address": "ak",
+      "id":2,
+      "statue":"InActive"
+    },
+    {
+      "name": "fares",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":3,
+      "statue":"InActive"
+    },
+    {
+      "name": "kareem",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":4,
+      "statue":"InActive"
+    },
+    {
+      "name": "gaafer",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":5,
+      "statue":"Active"
+    },
+    {
+      "name": "jolal",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":6,
+      "statue":"InActive"
+    },
+    {
+      "name": "jamal",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":7,
+      "statue":"Active"
+    },
+    {
+      "name": "ana",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":8,
+      "statue":"InActive"
+    },
+    {
+      "name": "arwa",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":9,
+      "statue":"Active"
+    },
+    {
+      "name": "abeer",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":10,
+      "statue":"Active"
+    },
+    {
+      "name": "aya",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":11,
+      "statue":"InActive"
+    },
+    {
+      "name": "gamal",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":12,
+      "statue":"Active"
+    },
+    {
+      "name": "jehaad",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":13,
+      "statue":"Active"
+    },
+    {
+      "name": "yara",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":14,
+      "statue":"Active"
+    },
+    {
+      "name": "yasmeen",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":15,
+      "statue":"Active"
+    },
+    {
+      "name": "yara",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":16,
+      "statue":"InActive"
+    },
+    {
+      "name": "noah",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":17,
+      "statue":"Active"
+    },
+    {
+      "name": "noha",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":18,
+      "statue":"Active"
+    },
+    {
+      "name": "ahmed",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":19,
+      "statue":"Active"
+    },
+    {
+      "name": "jana",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":20,
+      "statue":"Active"
+    },
+    {
+      "name": "alaa",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":21,
+      "statue":"Active"
+    },
+    {
+      "name": "huda",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":22,
+      "statue":"Active"
+    },
+    {
+      "name": "lama",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":23,
+      "statue":"Active"
+    },
+    {
+      "name": "nermeen",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":24,
+      "statue":"Active"
+    },
+    {
+      "name": "safaa",
+      "email": "john@gmail.com",
+      "phone": "9632587411",
+      "address": "uk",
+      "id":25,
+      "statue":"Active"
+    }
+]}
