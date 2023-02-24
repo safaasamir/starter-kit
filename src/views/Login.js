@@ -35,10 +35,10 @@ const Login = () => {
 
   return (
     <div className="auth-wrapper auth-cover">
-      <Row className="auth-inner m-0">
-        <Link className="brand-logo " to="/" onClick={(e) => e.preventDefault()}>
+      <Row className="auth-inner m-0" >
+        <Link className="brand-logo " width="60px" to="/" onClick={(e) => e.preventDefault()} >
          <img src={logo} alt="Buslogo" width={60}/>
-          <h2 className="brand-text ms-1 my-auto" style={{fontFamily:'PT Serif', color:"black"}}>Waslna</h2>
+         <h2 className="brand-text ms-1 my-auto" style={{fontFamily:'PT Serif', color:"black"}}>Waslna</h2>
         </Link>
         <Col className="d-none d-lg-flex align-items-center p-5" lg="8" sm="12">
           <div className="w-100 d-lg-flex align-items-center justify-content-center px-5">
@@ -70,7 +70,7 @@ const Login = () => {
                   id="login-email"
                   placeholder="john@example.com"
                   autoFocus
-                  style={{backgroundColor:"#FCFEB2"}}
+                  style = {{backgroundColor:"#FCFEB2"}}
                 />
               </div>
               <div className="mb-1">

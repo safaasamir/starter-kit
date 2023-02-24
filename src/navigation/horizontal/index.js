@@ -48,7 +48,7 @@ export default [
   {
     id: "Parents",
     title: "Parents",
-    icon: <Icon icon="material-symbols:groups" width="50" height="50" />,
+    icon: <Icon icon="ic:baseline-people-outline" color="gray" width="60" height="60" />,
     navLink: "/parent-page"
   },
   {

@@ -2,6 +2,7 @@ import '@styles/react/libs/tables/react-dataTable-component.scss'
 import '@styles/react/libs/react-select/_react-select.scss'
 import { Search } from "react-feather"
 import { Fragment } from 'react'
+import { Icon } from '@iconify/react'
 import {  Share, Printer, FileText, File, Grid, Copy } from 'react-feather'
 import {
     Row,
@@ -135,23 +136,11 @@ import {
 
         <Fragment>
           <Card>
-          <div className='invoice-list-table-header w-100 me-1 ms-50 mt-2 mb-75'>
+          <div className='invoice-list-table-header w-100 me-1 ms-10 mt-0 mb-30 '>
           <Row>
-            <Col xl='6' className='d-flex align-items-center p-1'>
-              <div className='d-flex align-items-center w-100'>
-                <label htmlFor='rows-per-page'>Show</label>
-                <Input
-                  className='mx-50'
-                  type='select'
-                  id='rows-per-page'
-                  style={{ width: '5rem' }}
-                >
-                  <option value='10'>10</option>
-                  <option value='25'>25</option>
-                  <option value='50'>50</option>
-                </Input>
-                <label htmlFor='rows-per-page'>Entries</label>
-              </div>
+            <Col xl='6' className='d-flex align-items-center p-1 '>
+            <Icon icon="ic:baseline-people-outline" color="black" width="40" height="40" className='mx-1' />
+             <h2 style={{color:"black"}} > parents </h2>
             </Col>
             <Col
               xl='6'
@@ -162,23 +151,22 @@ import {
                className='d-flex align-items-center mb-sm-0 mb-1 me-1'
               onSubmit={handleSearch}
             >
+            <button type="submit" style={{backgroundColor:"#FEC628", marginLeft:"20px"}}>
+             <Search size={30}  /> 
+            </button>
+            
               <Input
                 type="text"
-                className='ms-50 w-100'
                 placeholder="Search Name..."
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
               />
-              <button type="submit" style={{backgroundColor:"#FEC628"}}>
-              <Search size={30} />
-            </button>
+              
               
             <Button className='add-new-user m-1 ' color='primary' onClick={() => handleReset() }>
             Reset
           </Button>
-          <Button className='add-new-user ' color='primary' >
-                  Add 
-                </Button>
+          <a className="btn d-block" style={{backgroundColor:"#FEC628", color:"white"}} href="/Add">Add</a>
             </form>
         </Col>
         </Row>

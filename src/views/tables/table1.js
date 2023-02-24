@@ -249,5 +249,21 @@ function Table1() {
     </MDBContainer>
   );
 }
+// <Col xl='6' className='d-flex align-items-center p-1'>
+// <div className='d-flex align-items-center w-100'>
+//   <label htmlFor='rows-per-page'>Show</label>
+//   <Input
+//     className='mx-50'
+//     type='select'
+//     id='rows-per-page'
+//     style={{ width: '5rem' }}
+//   >
+//     <option value='10'>10</option>
+//     <option value='25'>25</option>
+//     <option value='50'>50</option>
+//   </Input>
+//   <label htmlFor='rows-per-page'>Entries</label>
+// </div>
+// </Col>
 
 export default Table1;
