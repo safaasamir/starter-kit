@@ -7,6 +7,8 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css "
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 
+//antd css style
+
 // ** ThemeColors Context
 
 import { ThemeContext } from "./utility/context/ThemeColors";

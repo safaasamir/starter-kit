@@ -43,7 +43,7 @@ export default [
     id: "Drivers",
     title: "Drivers",
     icon: <User size={20} />,
-    navLink: "/drivers-page"
+    navLink: "/driver"
   },
   {
     id: "Parents",

@@ -33,6 +33,7 @@ const ForgotPassword = lazy(() => import("../../views/ForgotPassword"))
 const Error = lazy(() => import("../../views/Error"))
 const Parents = lazy(() => import("../../views/Parent"))
 const Add = lazy(() => import("../../views/Add/AddParents"))
+const Driver = lazy(() => import("../../views//Drivers"))
 
 // ** Merge Routes
 const Routes = [
@@ -44,6 +45,10 @@ const Routes = [
   {
     path: "/home",
     element: <Home />
+  },
+  {
+    path: "/driver",
+    element: <Driver />
   },
   {
     path: "/school-page",
