@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Kufam:ital,wght@0,400;0,500;1,400&family=PT+Serif:ital,wght@1,700&family=Poppins:ital,wght@0,400;0,600;1,400;1,600;1,700&display=swap');
+*{
+    font-family: 'Almarai', sans-serif;
+    font-family: 'Kufam', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'PT Serif', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+
+}
+
+
+.cards{
+    display: flex;
+   height: 80vh;
+   width: 90vw;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background-color:#fff ;
+    padding: 25px 30px;
+    border-radius: 5px;
+    background-color: #FEC628;
+    
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    color: black;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg,#FCFEB2,#FEC628);
+
+}
+.container form .user-details{
+    display: flex;
+   flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+    margin-bottom:15px ;
+    width: calc(100% / 2 -20px);
+    
+}
+
+
+.user-details .input-box .input{
+    height: 45px;
+    width: 100%;
+    background-color: #FCFEB2;
+    padding: 10px;
+    outline: none;
+     border-radius: 5px; 
+    border: 1px solid #FCFEB2;
+    font-size: 16px;
+     border-bottom-width:2px ; 
+    transition: all 0.3 ease;
+   
+}
+/*  */
+
+.user-details .input-box .details{
+    color: black;
+    font-weight: 500;
+    font-size:medium;
+    margin-bottom: 5px;
+}
+.user-details .input-box .input:focus,
+.user-details .input-box .input:valid
+{
+border-color: black;
+
+}
+
+form .button{
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input {
+height: 100%;
+width: 100%;
+outline: none;
+color: #fff;
+border: none;
+font-size: 18px;
+font-weight: 500;
+border-radius: 5px;
+letter-spacing: 1px;
+background: linear-gradient(135deg,#FCFEB2,#FEC628);
+}
+form .button input:hover{
+    background: linear-gradient(-135deg,#FCFEB2,#FEC628);
+}
+@media (max-width:743px) {
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom:15px ;
+        width: 100%;
+        
+    }
+    .container form .user-details{
+        max-height: 300px ;
+       overflow-y: scroll;
+    }
+    
+}
+.child{
+    display:flex;
+   width:100%;
+  
+}
+.btns{
+    margin-left: 10px;
+    width: 60px;
+    border-radius: 50%;
+   
+   height: 60px;
+   padding: 0px;
+   margin-top: 15px;
+}
+.word
+{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}

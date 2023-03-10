@@ -11,7 +11,13 @@ export default [
     id: "School",
     title: "School",
     icon: <Icon icon="teenyicons:school-outline" width="50" height="50" />,
-    navLink: "/home"
+    navLink: "/school-page"
+  },
+  {
+    id: "Schools",
+    title: "Schools",
+    icon: <Icon icon="teenyicons:school-outline" width="50" height="50" />,
+    navLink: "/school-admin"
   },
   {
     id: "Plans",

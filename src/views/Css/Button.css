@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Kufam:ital,wght@0,400;0,500;1,400&family=PT+Serif:ital,wght@1,700&family=Poppins:ital,wght@0,400;0,600;1,400;1,600;1,700&display=swap');
+*{
+    font-family: 'Almarai', sans-serif;
+    font-family: 'Kufam', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'PT Serif', serif;
+    
+    }
+
+.send-button{
+    border:none;
+    outline: none;
+    background: linear-gradient(135deg,#FCFEB2,#FEC628);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    color:black;
+    width:90px;
+    height: 40px;
+    border: 1px 1px solid ;
+    border-radius: 5px;
+}
+.send-button:hover{
+    background: linear-gradient(-135deg,#FCFEB2,#FEC628);
+    transition: 0.3s all linear;
+}

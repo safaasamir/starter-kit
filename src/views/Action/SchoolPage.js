@@ -1,12 +1,11 @@
 
-import TableBasic from './TableBasic'
-import Table1 from "./tables/table1"
+
+import School from "../tables/School"
 const SecondPage = () => {
   return (
     <div>
-   <Table1/>
-  
-    
+   <School/>
+
     </div>
     
   )

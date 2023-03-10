@@ -1,17 +1,13 @@
 import '@styles/react/libs/tables/react-dataTable-component.scss'
 import '@styles/react/libs/react-select/_react-select.scss'
 import "@src/views/Css/Button.css"
-import {  UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
-import { MoreVertical, Edit, Trash} from 'react-feather'
-import { FiSend ,FiUsers} from 'react-icons/fi'
-import { FaHistory } from 'react-icons/fa'
-import { GrNotification } from 'react-icons/gr'
-
 import { Search } from "react-feather"
 import { Fragment } from 'react'
 import { Link} from "react-router-dom"
 import { Icon } from '@iconify/react'
-import { User} from "react-feather"
+
+import {  UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
+import { MoreVertical, Edit, Trash } from 'react-feather'
 import {
     Row,
     Col,
@@ -33,9 +29,8 @@ import {
 } from "mdb-react-ui-kit";
 
 
-function DRTable(props)
+function SchTable(props)
 {
-    
     const {onsubmit, onclick ,setvalue,values,dataTable,prev}= props
 
     return(
@@ -44,8 +39,8 @@ function DRTable(props)
             <div className='invoice-list-table-header w-100 me-1 ms-10 mt-0 mb-30 '>
                 <Row>
                     <Col xl='6' className='d-flex align-items-center p-1 '>
-                    <User size={40}  className='mx-1' color="#FEC628"  />
-                        <h2 style={{ color: "black" , marginTop:"15px"}}>Drivers</h2>
+                    <Icon icon="teenyicons:school-outline"  className='mx-1' color="#FEC628" width="40" height="40" />
+                        <h2 style={{ color: "black" , marginTop:"15px"}}>Schools</h2>
                     </Col>
                     <Col
                         xl='6'
@@ -68,11 +63,11 @@ function DRTable(props)
                             />
 
 
-                            <Button className=' ms-1 send-button' color="black" onClick={onclick}>
+                            <Button className=' mx-1  send-button' color="black" onClick={onclick}>
                                 Reset
                             </Button>
-                            <Link className=' mx-1  send-button btn d-block'  color="black" to="/AddDriver">Add</Link>
-                            <Link className='   send-button btn d-block'  color="black" to="/AddDriver">Map</Link>
+                            <Link  className='   send-button btn d-block' color="black"to="/AddDriver">Add </Link>
+                            
                         </form>
                     </Col>
                 </Row>
@@ -85,12 +80,12 @@ function DRTable(props)
                         <MDBTableHead dark>
                             <tr>
 
-                                <th scope="col">Name </th>
-                                <th scope="col">Telephone</th>
-                                <th scope="col">last-Location </th>
-                                <th scope="col">BusLicense</th>
-                                <th scope="col">Created</th>
-                                <th scope="col">Last Update</th>
+                                <th scope="col">ID </th>
+                                <th scope="col">School admin</th>
+                                <th scope="col">phone number </th>
+                                <th scope="col">Registered</th>
+                                <th scope="col">Plan</th>
+                                <th scope="col">Renew on</th>
                                 <th scope="col">action </th>
                                 
                             </tr>
@@ -107,7 +102,7 @@ function DRTable(props)
                             dataTable.map((item, index) => (
                                 <MDBTableBody key={index}>
                                     <tr>
-                                        
+
                                         <td>{item.name}</td>
                                         <td>{item.email}</td>
                                         <td>{item.phone}</td>
@@ -119,28 +114,14 @@ function DRTable(props)
                                           <MoreVertical size={15} />
                                         </DropdownToggle>
                                         <DropdownMenu>
-                                          <DropdownItem href='/edit-driver'>
+                                          <DropdownItem href='/' onClick={e => e.preventDefault()}>
                                             <Edit className='me-50' size={15} /> <span className='align-middle'>Edit</span>
                                           </DropdownItem>
                                           <DropdownItem href='/' onClick={e => e.preventDefault()}>
                                             <Trash className='me-50' size={15} /> <span className='align-middle'>Delete</span>
                                           </DropdownItem>
-                                          <DropdownItem href='/' onClick={e => e.preventDefault()}>
-                                          <FiSend  className='me-50 my-10' size={15}  /> <span className='align-middle'>map</span>
-                                        </DropdownItem>
-                                        <DropdownItem href='/' onClick={e => e.preventDefault()}>
-                                          <FaHistory className='me-50 my-10' size={15}  /> <span className='align-middle'>History</span>
-                                        </DropdownItem>
-                                        <DropdownItem href='/' onClick={e => e.preventDefault()}>
-                                        <GrNotification className='me-50 my-10' size={15}  /> <span className='align-middle'>notify</span>
-                                      </DropdownItem>
-                                      <DropdownItem href='/' onClick={e => e.preventDefault()}>
-                                        <FiUsers className='me-50 my-10' size={15}  /> <span className='align-middle'>Parent</span>
-                                      </DropdownItem>
-                                        
                                         </DropdownMenu>
                                       </UncontrolledDropdown></td>
-
                                     </tr>
                                 </MDBTableBody>
                             ))
@@ -159,4 +140,4 @@ function DRTable(props)
     )
 
 }
-export default DRTable
+export default SchTable

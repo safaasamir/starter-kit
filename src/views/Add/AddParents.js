@@ -1,16 +1,16 @@
-import '@src/views/Add/Add.css'
-
+import '@src/views/Css/Add.css'
+import {Link}  from "react-router-dom"
 import { Icon } from '@iconify/react';
-const Add =()=>{
+const AddParent =()=>{
 
     return (
-        <div className='card'>
+        <div className='cards card'>
         <div className="container">
         <div className="title">New parents </div>
         <form action="#">
          <div className="user-details">
          <div className="input-box">
-         <span className="details">Parent Name </span>
+         <span className="details" >Parent Name </span>
          <input  className='input' type="text" placeholder=" name" required></input>
 
          </div>
@@ -41,8 +41,8 @@ const Add =()=>{
          <input  className='input' type="text" placeholder=" child name" required></input>
          </div>
         
-         <a className='btn'><Icon icon="fluent:subtract-circle-20-regular" color="red" width="60" height="60" /></a>
-         <a className='btn'><Icon icon="material-symbols:add-circle-outline-rounded" color="green" width="60" height="60" /></a>
+         <Link className='btn btns' to=""><Icon icon="fluent:subtract-circle-20-regular" color="red" width="60" height="60" /></Link>
+         <Link className='btn btns' to=""><Icon icon="material-symbols:add-circle-outline-rounded" color="green" width="60" height="60" /></Link>
          
          </div>
          </div>
@@ -54,4 +54,4 @@ const Add =()=>{
       
     )
 }
-export default Add
+export default AddParent

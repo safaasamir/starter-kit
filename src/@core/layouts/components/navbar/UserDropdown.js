@@ -45,7 +45,7 @@ const UserDropdown = () => {
         />
       </DropdownToggle>
       <DropdownMenu end>
-        <DropdownItem tag={Link} to="/" onClick={(e) => e.preventDefault()}>
+        <DropdownItem tag={Link} to="/edit-profile" >
           <User size={14} className="me-75" />
           <span className="align-middle">Profile</span>
         </DropdownItem>
@@ -53,7 +53,7 @@ const UserDropdown = () => {
           <Mail size={14} className="me-75" />
           <span className="align-middle">Inbox</span>
         </DropdownItem>
-        <DropdownItem tag={Link} to="/" onClick={(e) => e.preventDefault()}>
+        <DropdownItem tag={Link} to="/edit-password" >
           <Lock size={14} className="me-75" />
           <span className="align-middle">Password</span>
         </DropdownItem>

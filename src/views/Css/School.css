@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Kufam:ital,wght@0,400;0,500;1,400&family=PT+Serif:ital,wght@1,700&family=Poppins:ital,wght@0,400;0,600;1,400;1,600;1,700&display=swap');
+*{
+font-family: 'Almarai', sans-serif;
+font-family: 'Kufam', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'PT Serif', serif;
+margin: 0;
+padding: 0;
+scroll-behavior: smooth;
+box-sizing: border-box;
+}
+.body {
+    width:100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    
+    justify-content: center;
+    color:black;
+    
+}
+.contact-container {
+max-width: 960px;
+margin: auto;
+width: 50%;
+
+display: grid;
+background-color: #FEC628;
+box-shadow: 0 0 1rem hsla(0 0 0 / 16%);
+border-radius: .5rem;
+overflow: hidden;
+grid-template-columns: 1fr;
+gap: 1rem;
+        
+
+}
+.form-container{
+    padding: 20px;
+
+}
+.contact-container h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+}
+.contact-form{
+    display: grid;
+    row-gap: 1rem;
+}
+.contact-form input{
+    width:100%;
+    outline: none;
+    background-color: #FCFEB2;
+    padding: 10px; 
+    border-radius: 5px; 
+    border: 1px solid #FCFEB2;
+    font-size: 16px;
+     border-bottom-width:2px ; 
+    transition: all 0.3 ease;
+
+}
+.send-button{
+    border:none;
+    outline: none;
+    background: linear-gradient(135deg,#FCFEB2,#FEC628);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    color:black;
+    width:90px;
+    height: 40px;
+    border: 1px 1px solid ;
+    border-radius: 5px;
+   
+    
+}
+.not{
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+.send-button:hover{
+    background: linear-gradient(-135deg,#FCFEB2,#FEC628);
+    transition: 0.3s all linear;
+}
+.contact-form input:focus,
+.contact-form input:valid
+{
+border-color: black;
+
+
+}
+.map iframe{
+    width: 100%;
+    height: 400px;
+  
+
+}
+@media(max-width:964px){
+    .contact-container{
+        margin: 0 auto;
+        width: 90%;
+        overflow-y: scroll;
+
+    }
+}
+
+@media(max-width:700px){
+    .contact-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        overflow-y: scroll;
+
+        
+    }
+ .map iframe{
+    height: 400px;
+ }
+}

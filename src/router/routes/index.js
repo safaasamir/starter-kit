@@ -12,6 +12,8 @@ import PublicRoute from "@components/routes/PublicRoute"
 
 // ** Utils
 import { isObjEmpty } from "@utils"
+import EditProfile from "../../views/Action/Editprofile"
+import Editpassword from "../../views/Action/Editpassword"
 
 const getLayout = {
   blank: <BlankLayout />,
@@ -26,14 +28,21 @@ const TemplateTitle = "%s - Vuexy React Admin Template"
 const DefaultRoute = "/home"
 
 const Home = lazy(() => import("../../views/Home"))
-const SchoolPage = lazy(() => import("../../views/SchoolPage"))
-const Login = lazy(() => import("../../views/Login"))
-const Register = lazy(() => import("../../views/Register"))
-const ForgotPassword = lazy(() => import("../../views/ForgotPassword"))
+const SchoolPage = lazy(() => import("../../views/Action/SchoolPage"))
+const Schooladmin = lazy(() => import("../../views/Action/Schooladmin"))
+const Login = lazy(() => import("../../views/Login/Login"))
+const Register = lazy(() => import("../../views/Login/Register"))
+const ForgotPassword = lazy(() => import("../../views/Login/ForgotPassword"))
 const Error = lazy(() => import("../../views/Error"))
-const Parents = lazy(() => import("../../views/Parent"))
+const Parents = lazy(() => import("../../views/Action/Parent"))
 const Add = lazy(() => import("../../views/Add/AddParents"))
-const Driver = lazy(() => import("../../views//Drivers"))
+const AddDriver = lazy(() => import("../../views/Add/AddDriver"))
+const Driver = lazy(() => import("../../views/Action/Drivers"))
+const Bus = lazy(() => import("../../views/Action/Bus"))
+const Plan = lazy(() => import("../../views/Action/Plan"))
+const Profile = lazy(() => import("../../views/Action/Editprofile"))
+const Password = lazy(() => import("../../views/Action/Editpassword"))
+const EditDriver= lazy(() => import("../../views/Edit/EditDriver"))
 
 // ** Merge Routes
 const Routes = [
@@ -47,12 +56,36 @@ const Routes = [
     element: <Home />
   },
   {
+    path: "/plans-page",
+    element: <Plan />
+  },
+  {
     path: "/driver",
     element: <Driver />
   },
   {
+    path: "/edit-profile",
+    element: <Profile />
+  },
+  {
+    path: "/edit-password",
+    element: <Password />
+  },
+  {
+    path: "/edit-driver",
+    element: <EditDriver/>
+  },
+  {
+    path: "/bus-page",
+    element: <Bus />
+  },
+  {
     path: "/school-page",
     element: <SchoolPage />,
+  },
+  {
+    path: "/school-admin",
+    element: <Schooladmin />,
   },
   {
     path: "/parent-page",
@@ -73,10 +106,16 @@ const Routes = [
     },
   },
   {
-    path: "/Add",
+    path: "/AddParent",
     element: <Add/>,
     
   },
+{
+
+  path: "/AddDriver",
+  element: <AddDriver/>,
+  
+},
   {
     path: "/forgot-password",
     element: <ForgotPassword />,

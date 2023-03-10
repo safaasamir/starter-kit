@@ -13,16 +13,16 @@ import {
     MDBPagination,
 } from "mdb-react-ui-kit";
 
-import DRTable from './tables/Drivertable'
-function Driver() {
+import ParentTable from '../tables/Parenttable'
+function Parent() {
     const [data, setData] = useState([]);
     const [value, setValue] = useState("");
     const [currentPage, setCurrentPage] = useState(0);
     const [operation, setOperation] = useState("");
-    const [pageLimit] = useState(4);
+    const [pageLimit] = useState(10);
 
     useEffect(() => {
-        loadUserData(0, 4, 0);
+        loadUserData(0, 10, 0);
     }, []);
 
 
@@ -56,13 +56,13 @@ function Driver() {
         setOperation('');
 
         setValue('');
-        loadUserData(0, 4, 0, '');
+        loadUserData(0, 10, 0, '');
 
     };
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        loadUserData(0, 4, 0, "search");
+        loadUserData(0, 10, 0, "search");
 
 
     };
@@ -70,7 +70,7 @@ function Driver() {
 
 
     const renderPagination = () => {
-        if (data.length < 4 && currentPage === 0) return null
+        if (data.length < 10 && currentPage === 0) return null
         if (currentPage === 0) {
             return (
                 <MDBPagination className="mb-0">
@@ -78,7 +78,7 @@ function Driver() {
                         <MDBPaginationLink>1</MDBPaginationLink>
                     </MDBPaginationItem>
                     <MDBPaginationItem>
-                        <MDBBtn onClick={() => loadUserData(4, 8, 1, operation)}> Next</MDBBtn>
+                        <MDBBtn onClick={() => loadUserData(10, 20, 1, operation)}> Next</MDBBtn>
                     </MDBPaginationItem>
                 </MDBPagination>
             );
@@ -87,13 +87,13 @@ function Driver() {
                 <MDBPagination className="mb-0">
 
                     <MDBPaginationItem>
-                        <MDBBtn onClick={() => loadUserData((currentPage - 1) * 4, (currentPage) * 4, -1, operation)}> prev</MDBBtn>
+                        <MDBBtn onClick={() => loadUserData((currentPage - 1) * 10, (currentPage) * 10, -1, operation)}> prev</MDBBtn>
                     </MDBPaginationItem>
                     <MDBPaginationItem><MDBPaginationLink>{currentPage + 1}</MDBPaginationLink></MDBPaginationItem>
 
 
                     <MDBPaginationItem>
-                        <MDBBtn onClick={() => loadUserData((currentPage + 1) * 4, (currentPage + 2) * 4, 1, operation)}> Next</MDBBtn>
+                        <MDBBtn onClick={() => loadUserData((currentPage + 1) * 10, (currentPage + 2) * 10, 1, operation)}> Next</MDBBtn>
                     </MDBPaginationItem>
                 </MDBPagination>
             );
@@ -102,7 +102,7 @@ function Driver() {
                 <MDBPagination className="mb-0">
 
                     <MDBPaginationItem>
-                        <MDBBtn onClick={() => loadUserData((currentPage - 1) * 4, (currentPage) * 4, -1, operation)}> prev</MDBBtn>
+                        <MDBBtn onClick={() => loadUserData((currentPage - 1) * 10, (currentPage) * 10, -1, operation)}> prev</MDBBtn>
                     </MDBPaginationItem>
                     <MDBPaginationItem>
                         <MDBPaginationLink>{currentPage}</MDBPaginationLink>
@@ -114,10 +114,10 @@ function Driver() {
     return (
 
 
-        <DRTable onsubmit={handleSearch} onclick={handleReset} setvalue={setValue} values={value} dataTable={data} prev={renderPagination()}/>
+        <ParentTable onsubmit={handleSearch} onclick={handleReset} setvalue={setValue} values={value} dataTable={data} prev={renderPagination()}/>
 
     );
 }
 
-export default Driver;
+export default Parent;
 
