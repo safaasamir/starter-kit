@@ -27,12 +27,13 @@ import buslogo from "@src/assets/images/pages/logo.svg"
 
 // ** Styles
 import "@styles/react/pages/page-authentication.scss";
-const Login = () => {
+const Login = (props) => {
   const { skin } = useSkin();
 
   const source = skin === "dark" ? illustrationsDark : illustrationsLight;
   const logo = buslogo;
-
+ const {username,password,setUsername,setPassword,ProceedLogin}=props
+ 
   return (
     <div className="auth-wrapper auth-cover">
       <Row className="auth-inner m-0" >
@@ -59,18 +60,20 @@ const Login = () => {
             </CardText>
             <Form
               className="auth-login-form mt-2"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={ProceedLogin}
             >
               <div className="mb-1">
                 <Label className="form-label" for="login-email">
                 <Mail size={20} /> Email
                 </Label>
                 <Input
-                  type="email"
+                  type="text"
                   id="login-email"
                   placeholder="john@example.com"
                   autoFocus
                   style = {{backgroundColor:"#FCFEB2"}}
+                  value={username}
+                  onChange={(e)=>setUsername(e.target.value)}
                 />
               </div>
               <div className="mb-1">
@@ -86,6 +89,8 @@ const Login = () => {
                   className="input-group-merge"
                   id="login-password"
                   style={{backgroundColor:"#FCFEB2"}}
+                  value={password}
+                  onChange={(e)=>setPassword(e.target.value)}
                 />
               </div>
               <div className="form-check mb-1">
@@ -94,7 +99,7 @@ const Login = () => {
                   Remember Me
                 </Label>
               </div>
-              <a className="btn d-block w-100" style={{backgroundColor:"#FEC628"}} href="/">Sign in</a>
+              <Button className=" w-100" color="primary" >Sign in</Button>
              
              
             </Form>

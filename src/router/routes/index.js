@@ -30,7 +30,7 @@ const DefaultRoute = "/home"
 const Home = lazy(() => import("../../views/Home"))
 const SchoolPage = lazy(() => import("../../views/Action/SchoolPage"))
 const Schooladmin = lazy(() => import("../../views/Action/Schooladmin"))
-const Login = lazy(() => import("../../views/Login/Login"))
+const Login = lazy(() => import("../../views/Api/loginApi"))
 const Register = lazy(() => import("../../views//Api/RegisterApi"))
 const ForgotPassword = lazy(() => import("../../views/Login/ForgotPassword"))
 const Error = lazy(() => import("../../views/Error"))

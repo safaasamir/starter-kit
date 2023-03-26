@@ -7,7 +7,7 @@ function RegisterApi()
 {
    
     const [userName,setUserName]=useState('');
-    const[email,setEmail]=useState('');
+    const[id,setid]=useState('');
     const[phone,setPhone]=useState('');
     const[password,setPassword]=useState('');
     const navigate=useNavigate()
@@ -19,7 +19,7 @@ function RegisterApi()
             isproceed=false;
             errormessage+='Username -'
         }
-        if(email==null|| setEmail===''){
+        if(id==null|| setid===''){
             isproceed=false;
             errormessage+='Email -'
         }
@@ -35,7 +35,7 @@ function RegisterApi()
         if(!isproceed){
             toast.error(errormessage)
         }else {
-            if(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)){
+            if(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(id)){
            
             }else{
                 isproceed=false;
@@ -53,7 +53,7 @@ function RegisterApi()
    function signUp(e){
    
         e.preventDefault()
-        let item ={userName,email,phone,password}
+        let item ={userName,id,phone,password}
         if (IsValidate()){
         fetch("http://localhost:5000/userEmail",{
             method:"POST",
@@ -64,9 +64,10 @@ function RegisterApi()
 
         })
         .then((res)=>{
+           navigate("/login") 
           toast.success('Registered successfully')
          
-          navigate("/home")
+          
         
         }).catch((err)=>{
             toast.error('Failed'+err.message);
@@ -76,7 +77,7 @@ function RegisterApi()
     }
     }
  return(
-    <Register userName={userName} setUserName={setUserName} email={email} setEmail={setEmail} phone={phone} setPhone={setPhone} 
+    <Register userName={userName} setUserName={setUserName} email={id} setEmail={setid} phone={phone} setPhone={setPhone} 
     password={password} setPassword={setPassword} signUp={signUp} />)
  
 }

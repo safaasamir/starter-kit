@@ -1,5 +1,7 @@
 // ** React Imports
-import { Link } from "react-router-dom"
+import { Link} from "react-router-dom"
+import { useNavigate } from 'react-router';
+import { useEffect } from "react";
 
 // ** Custom Components
 import Avatar from "@components/avatar"
@@ -24,7 +26,18 @@ import {
 // ** Default Avatar Image
 import defaultAvatar from "@src/assets/images/portrait/small/avatar-s-11.jpg"
 
-const UserDropdown = () => {
+const UserDropdown = (props) => {
+  const{usernames,emails,here}=props;
+  console.log("nn"+usernames)
+  const usenavigate=useNavigate();
+  useEffect(()=>
+  {
+    let email=sessionStorage.getItem("email");
+    if(email===""||email===null){
+      usenavigate("/login")
+    }
+  },
+  [])
   return (
     <UncontrolledDropdown tag="li" className="dropdown-user nav-item">
       <DropdownToggle
@@ -34,8 +47,8 @@ const UserDropdown = () => {
         onClick={(e) => e.preventDefault()}
       >
         <div className="user-nav d-sm-flex d-none">
-          <span className="user-name fw-bold">John Doe</span>
-          <span className="user-status">Admin</span>
+          <span className="user-name fw-bold">{usernames} </span>
+          <span className="user-status">{emails} </span>
         </div>
         <Avatar
           img={defaultAvatar}
