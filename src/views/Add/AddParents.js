@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 const AddParent =()=>{
 
     return (
-        <div className='cards card'>
+        <div className='cards card '>
         <div className="container">
         <div className="title">New parents </div>
         <form action="#">

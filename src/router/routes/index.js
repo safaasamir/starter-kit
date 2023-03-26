@@ -31,7 +31,7 @@ const Home = lazy(() => import("../../views/Home"))
 const SchoolPage = lazy(() => import("../../views/Action/SchoolPage"))
 const Schooladmin = lazy(() => import("../../views/Action/Schooladmin"))
 const Login = lazy(() => import("../../views/Login/Login"))
-const Register = lazy(() => import("../../views/Login/Register"))
+const Register = lazy(() => import("../../views//Api/RegisterApi"))
 const ForgotPassword = lazy(() => import("../../views/Login/ForgotPassword"))
 const Error = lazy(() => import("../../views/Error"))
 const Parents = lazy(() => import("../../views/Action/Parent"))
@@ -43,6 +43,11 @@ const Plan = lazy(() => import("../../views/Action/Plan"))
 const Profile = lazy(() => import("../../views/Action/Editprofile"))
 const Password = lazy(() => import("../../views/Action/Editpassword"))
 const EditDriver= lazy(() => import("../../views/Edit/EditDriver"))
+const EditParent= lazy(() => import("../../views/Edit/EditParent"))
+const DriverMap=lazy(() => import("../../views/maps/DriverMap"))
+const ParentMap=lazy(() => import("../../views/maps/Parentsmap"))
+const DriversMap=lazy(() => import("../../views/maps/DriversMap"))
+const DriverParent=lazy(() => import("../../views/Action/DriverParents"))
 
 // ** Merge Routes
 const Routes = [
@@ -55,6 +60,7 @@ const Routes = [
     path: "/home",
     element: <Home />
   },
+
   {
     path: "/plans-page",
     element: <Plan />
@@ -71,10 +77,7 @@ const Routes = [
     path: "/edit-password",
     element: <Password />
   },
-  {
-    path: "/edit-driver",
-    element: <EditDriver/>
-  },
+  
   {
     path: "/bus-page",
     element: <Bus />
@@ -82,6 +85,10 @@ const Routes = [
   {
     path: "/school-page",
     element: <SchoolPage />,
+  },
+  {
+    path: "/Driver-parent",
+    element: <DriverParent />,
   },
   {
     path: "/school-admin",
@@ -116,12 +123,34 @@ const Routes = [
   element: <AddDriver/>,
   
 },
+
+{
+  path: "/edit-driver",
+  element: <EditDriver/>
+},
+{
+  path: "/edit-parent",
+  element: <EditParent/>
+},
   {
     path: "/forgot-password",
     element: <ForgotPassword />,
     meta: {
       layout: "blank",
     },
+  },
+
+  {
+    path: "/driver-map",
+    element: <DriverMap />
+  },
+  {
+    path: "/drivers-map",
+    element: <DriversMap />
+  },
+  {
+    path: "/parents-map",
+    element: <ParentMap />
   },
   {
     path: "/error",

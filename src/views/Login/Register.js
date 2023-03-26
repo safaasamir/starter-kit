@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 import { useSkin } from '@hooks/useSkin'
 
 // ** Icons Imports
-import { Facebook, Twitter, Mail, GitHub } from 'react-feather'
+import { Facebook, Twitter, Mail, GitHub,User,Lock,Phone } from 'react-feather'
 
 // ** Custom Components
 import InputPasswordToggle from '@components/input-password-toggle'
 
 // ** Reactstrap Imports
-import { Row, Col, CardTitle, CardText, Form, Label, Input, Button } from 'reactstrap'
+import { Row, Col, CardTitle, Form, Label, Input, Button } from 'reactstrap'
 
 
 // ** Illustrations Imports
@@ -19,16 +19,17 @@ import illustrationsDark from "@src/assets/images/pages/bus-dark.svg"
 
 // ** Styles
 import '@styles/react/pages/page-authentication.scss'
-import '@styles/react/pages/page-authentication.scss'
+
 import buslogo from "@src/assets/images/pages/logo.svg"
 const LogoBus = buslogo
 
 
-const Register = () => {
+function Register (props){
+  
     const { skin } = useSkin()
 
   const source = skin === 'dark' ? illustrationsDark : illustrationsLight
-
+  const {userName,setUserName,email,setEmail,phone,setPhone,password,setPassword,signUp}=props
   return (
     <div className="auth-wrapper auth-cover">
       <Row className="auth-inner m-0">
@@ -53,33 +54,37 @@ const Register = () => {
             </CardTitle>
           
 
-            <Form action='/' className='auth-register-form mt-2' onSubmit={e => e.preventDefault()}>
+            <Form action='/' className='auth-register-form mt-2' onSubmit={signUp}>
             <div className='mb-1'>
+            <User size={20}/>
             <Label className='form-label' for='register-username'>
               Username
             </Label>
-            <Input type='text' id='register-username' placeholder='johndoe' autoFocus style={{backgroundColor:"#FCFEB2"}}/>
+            <Input type='text' id='register-username' placeholder='johndoe' autoFocus style={{backgroundColor:"#FCFEB2"}} value={userName} onChange={(e)=>{setUserName(e.target.value)}}/>
           </div>
           <div className='mb-1'>
+          <Mail size={20} />
             <Label className='form-label' for='register-email'>
               Email
             </Label>
-            <Input type='email' id='register-email' placeholder='john@example.com' style={{backgroundColor:"#FCFEB2"}}/>
+            <Input type='text' id='register-email' placeholder='john@example.com' style={{backgroundColor:"#FCFEB2"}} value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
           </div>
           <div className='mb-1'>
+          <Phone size={20}/>
           <Label className='form-label' for='register-phone'>
             Phone
           </Label>
-          <Input type='text' id='register-phone' placeholder='0125656655' style={{backgroundColor:"#FCFEB2"}}/>
+          <Input type='text' id='register-phone' placeholder='0125656655' style={{backgroundColor:"#FCFEB2"}}  value={phone} onChange={(e)=>{setPhone(e.target.value)}}/>
         </div>
           <div className='mb-1'>
+          <Lock size={20} />
             <Label className='form-label' for='register-password'>
               Password
             </Label>
-            <InputPasswordToggle className='input-group-merge' id='register-password' style={{backgroundColor:"#FCFEB2"}}/>
+            <InputPasswordToggle className='input-group-merge' id='register-password' style={{backgroundColor:"#FCFEB2"}} value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
           </div>
           <div className='form-check mb-1'>
-            <Input type="checkbox" id='terms'/>
+            <Input type="checkbox" id='terms' />
             <Label className='form-check-label' for='terms'>
               I agree to
               <a className='ms-25' href='/' onClick={e => e.preventDefault()}>
@@ -87,7 +92,7 @@ const Register = () => {
               </a>
             </Label>
           </div>
-          <Button color='primary' block>
+          <Button color='primary' block >
             Sign up
           </Button>
         </Form>

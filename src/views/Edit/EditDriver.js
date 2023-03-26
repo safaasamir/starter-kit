@@ -1,38 +1,41 @@
+import '@src/views/Css/Add.css'
+import {  Trash} from 'react-feather'
+import {
+    
 
-import style from "../Css/Edit.module.css"
-//import "@src/views/Css/Add.css"
-import {Card} from "reactstrap"
+    Button,
+
+} from 'reactstrap'
 const EditDriver =()=>{
 
     return (
-        <Card>
-        <div className={style.cards }>
-        <div className={style.container}>
-        <div className={style.title}>Edit Driver </div>
+        <div className='cards card'>
+        <div className="container">
+        <div className="title">Edit Driver </div>
         <form action="#">
-         <div className={style.userdetails} >
-         <div className={style.inputbox} style={{width:"800px"}}>
-         <span className={style.details} >Driver Name </span>
-         <input  className={style.input} type="text" placeholder=" name" required></input>
+         <div className="user-details" >
+         <div className="input-box" style={{width:"800px"}}>
+         <span className="details" >Driver Name </span>
+         <input  className='input' type="text" placeholder=" name" required></input>
 
          </div>
          
-         <div className={style.inputbox}>
+         <div className="input-box">
          
-         <span className={style.details}>Country code</span>
-         <input className={style.input} type="text" placeholder=" + country code" required></input>
+         <span className="details">Country code</span>
+         <input className='input' type="text" placeholder=" + country code" required></input>
          
          </div>
-         <div className={style.inputbox}>
-         <span className={style.details}>Parent phone</span>
-         <input  className={style.input} type="text" placeholder=" telephone" required></input>
+         <div className="input-box">
+         <span className="details">Parent phone</span>
+         <input  className='input' type="text" placeholder=" telephone" required></input>
          </div>
-         <div className={style.child}>
-         <div className={style.inputbox}>
+         <div className='child'>
+         <div className="input-box" >
 
-         <span className={style.details}>Bus </span>
+         <span className="details ">Bus </span>
          
-         <select className={style.input}  name="drivers" id="driver">
+         <select className='input'  name="drivers" id="driver">
          <option  value="ahmed">safaa samir abd elazem</option>
          <option value="amrsaab"> amr Saab elhany</option>
          <option value="hamed">hamed mahmoud</option>
@@ -45,13 +48,14 @@ const EditDriver =()=>{
          </div>
          </div>
 
-         <div className={style.button}><input type="submit" name="" value=" Save"/></div>
-         <div className={style.button}><input type="submit" name="" value=" Delete"/></div>
+         <div className='button'><input type="submit" name="" value=" Save"/></div>
+         <div className='button'><input type="submit" name="" value="Cancel" /></div>
+        
+        
           
         </form>
         </div>
         </div>
-        </Card>
       
     )
 }

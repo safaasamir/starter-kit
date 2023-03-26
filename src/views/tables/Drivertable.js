@@ -10,7 +10,6 @@ import { GrNotification } from 'react-icons/gr'
 import { Search } from "react-feather"
 import { Fragment } from 'react'
 import { Link} from "react-router-dom"
-import { Icon } from '@iconify/react'
 import { User} from "react-feather"
 import {
     Row,
@@ -72,7 +71,7 @@ function DRTable(props)
                                 Reset
                             </Button>
                             <Link className=' mx-1  send-button btn d-block'  color="black" to="/AddDriver">Add</Link>
-                            <Link className='   send-button btn d-block'  color="black" to="/AddDriver">Map</Link>
+                            <Link className='   send-button btn d-block'  color="black" to="/drivers-map">Map</Link>
                         </form>
                     </Col>
                 </Row>
@@ -119,22 +118,20 @@ function DRTable(props)
                                           <MoreVertical size={15} />
                                         </DropdownToggle>
                                         <DropdownMenu>
-                                          <DropdownItem href='/edit-driver'>
+                                         <DropdownItem href='/edit-driver'> 
                                             <Edit className='me-50' size={15} /> <span className='align-middle'>Edit</span>
                                           </DropdownItem>
                                           <DropdownItem href='/' onClick={e => e.preventDefault()}>
                                             <Trash className='me-50' size={15} /> <span className='align-middle'>Delete</span>
                                           </DropdownItem>
-                                          <DropdownItem href='/' onClick={e => e.preventDefault()}>
+                                          <DropdownItem href='/driver-map' >
                                           <FiSend  className='me-50 my-10' size={15}  /> <span className='align-middle'>map</span>
                                         </DropdownItem>
-                                        <DropdownItem href='/' onClick={e => e.preventDefault()}>
-                                          <FaHistory className='me-50 my-10' size={15}  /> <span className='align-middle'>History</span>
-                                        </DropdownItem>
+                                       
                                         <DropdownItem href='/' onClick={e => e.preventDefault()}>
                                         <GrNotification className='me-50 my-10' size={15}  /> <span className='align-middle'>notify</span>
                                       </DropdownItem>
-                                      <DropdownItem href='/' onClick={e => e.preventDefault()}>
+                                      <DropdownItem href='/Driver-parent' >
                                         <FiUsers className='me-50 my-10' size={15}  /> <span className='align-middle'>Parent</span>
                                       </DropdownItem>
                                         

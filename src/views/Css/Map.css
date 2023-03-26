@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containers{
+    text-align: center;
+   
+    margin:auto;
+    padding: 10px;
+    max-width: 700px;
+
+    
+  
+     width: 100%;
+    
+    
+
+}
+.containers h3{
+    margin: 10px;
+   
+    color: #FEC628;
+}
+.containers iframe{
+    width: 800px;
+    height: 600px;
+    background-color: #FCFEB2;
+    box-shadow: 0 2px 8px rgba(50, 50, 50, .6);
+    
+}
+@media (max-width:985px) {
+    .containers{
+        max-width: 100%;
+       
+       
+    }
+    
+    
+    .containers iframe{
+        max-height: 300px ;
+      
+        max-width: 100%;
+       overflow-y: scroll;
+    }
+    
+    
+}

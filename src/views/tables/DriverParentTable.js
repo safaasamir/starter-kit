@@ -30,7 +30,7 @@ import {
 } from "mdb-react-ui-kit";
 
 
-function ParentTable(props)
+function DriverParentTable(props)
 {
     const {onsubmit, onclick ,setvalue,values,dataTable,prev}= props
 
@@ -41,7 +41,7 @@ function ParentTable(props)
                 <Row>
                     <Col xl='6' className='d-flex align-items-center p-1 '>
                     <Icon icon="ic:baseline-people-outline"  className='mx-1' color="#FEC628"  width="40" height="40" />
-                        <h2 style={{ color: "black" , marginTop:"10px"}} > parents</h2>
+                        <h2 style={{ color: "black" , marginTop:"10px"}} > Parents assigned to : </h2>
                     </Col>
                     <Col
                         xl='6'
@@ -67,7 +67,7 @@ function ParentTable(props)
                             <Button className=' mx-1  send-button' color="black" onClick={onclick}>
                                 Reset
                             </Button>
-                            <Link  className='  send-button btn d-block'  color="black" to="/AddParent">Add</Link>
+                            
                         </form>
                     </Col>
                 </Row>
@@ -120,13 +120,13 @@ function ParentTable(props)
                                           <MoreVertical size={15} />
                                         </DropdownToggle>
                                         <DropdownMenu>
-                                          <DropdownItem href='/edit-parent' >
+                                          <DropdownItem href='/' onClick={e => e.preventDefault()}>
                                             <Edit className='me-50' size={15} /> <span className='align-middle'>Edit</span>
                                           </DropdownItem>
                                           <DropdownItem href='/' onClick={e => e.preventDefault()}>
                                             <Trash className='me-50' size={15} /> <span className='align-middle'>Delete</span>
                                           </DropdownItem>
-                                          <DropdownItem href='/parents-map' >
+                                          <DropdownItem href='/' onClick={e => e.preventDefault()}>
                                           <FiSend  className='me-50 my-10' size={15}  /> <span className='align-middle'>map</span>
                                         </DropdownItem>
                                         </DropdownMenu>
@@ -150,4 +150,4 @@ function ParentTable(props)
     )
 
 }
-export default ParentTable
+export default DriverParentTable
