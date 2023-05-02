@@ -17,10 +17,10 @@ const AddParent =()=>{
          <div className="input-box">
          <span className="details ">Select driver </span>
          <select className='input'  name="drivers" id="driver">
-         <option  value="ahmed">safaa samir abd elazem</option>
-         <option value="amrsaab"> amr Saab elhany</option>
-         <option value="hamed">hamed mahmoud</option>
-         <option value="noah">noah kjjjjjjj</option>
+         <option  value="ahmed">safaa jjjjjjjj </option>
+         <option value="amrsaab"> amr aaaaaa </option>
+         <option value="hamed">hamed bbbbb </option>
+         <option value="noah">noah yyyyy </option>
          <option value="another">another </option>
       </select>
          </div>

@@ -79,9 +79,9 @@ const EditDriver =()=>{
          <span className="details ">Bus </span>
          
          <select  value={bus}  onChange={e=>busChange(e.target.value)} className='input'  name="drivers" id="driver">
-         <option  value="ahmed">safaa samir abd elazem</option>
-         <option value="amrsaab"> amr Saab elhany</option>
-         <option value="hamed">hamed mahmoud</option>
+         <option  value="ahmed">safaa bbbb</option>
+         <option value="amrsaab"> amr kkk</option>
+         <option value="hamed">hamed lllll</option>
          <option value="noah">noah kjjjjjjj</option>
          <option value="another">another </option>
       </select>

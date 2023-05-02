@@ -17,9 +17,9 @@ const EditParent =()=>{
          <div className="input-box">
          <span className="details ">Driver </span>
          <select className='input'  name="drivers" id="driver">
-         <option  value="ahmed">safaa samir abd elazem</option>
-         <option value="amrsaab"> amr Saab elhany</option>
-         <option value="hamed">hamed mahmoud</option>
+         <option  value="ahmed">safaa lll</option>
+         <option value="amrsaab"> amr yyyyyy</option>
+         <option value="hamed">hamed kkkk</option>
          <option value="noah">noah kjjjjjjj</option>
          <option value="another">another </option>
       </select>

@@ -55,15 +55,15 @@ const AddDriver =()=>{
          <span className="details ">Select Bus </span>
          
          <select value={bus}  onChange={e=>busChange(e.target.value)} className='input'  name="drivers" id="driver">
-         <option  value="ahmed">safaa samir abd elazem</option>
-         <option value="amrsaab"> amr Saab elhany</option>
-         <option value="hamed">hamed mahmoud</option>
-         <option value="noah">noah kjjjjjjj</option>
+         <option  value="ahmed">safaa jjjj </option>
+         <option value="amrsaab"> amr uuuuu </option>
+         <option value="hamed">hamed pppp </option>
+         <option value="noah">noah hhhh </option>
          <option value="another">another </option>
       </select>
       
          </div>
-         <a className='btn btns word'  href=""><span >New</span></a>
+         <a className='btn btns word'  href=" "><span >New</span></a>
          </div>
          </div>
 
