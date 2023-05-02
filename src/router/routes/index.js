@@ -125,7 +125,7 @@ const Routes = [
 },
 
 {
-  path: "/edit-driver",
+  path: "/edit-driver/:empid",
   element: <EditDriver/>
 },
 {

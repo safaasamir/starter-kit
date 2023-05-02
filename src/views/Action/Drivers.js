@@ -35,6 +35,7 @@ function Driver() {
                 return await axios
                     .get(`http://localhost:5000/users?q=${value}&_start=${start}&_end=${end}`)
                     .then((response) => {
+
                         setData(response.data);
                         setCurrentPage(currentPage + increas);
                     })
@@ -45,6 +46,7 @@ function Driver() {
             default:
                 return await axios
                     .get(`http://localhost:5000/users?_start=${start}&_end=${end}`)
+                    
                     .then((response) => { setData(response.data); setCurrentPage(currentPage + increas) })
                     .catch((err) => console.log(err));
         }

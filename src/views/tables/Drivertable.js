@@ -9,7 +9,7 @@ import { GrNotification } from 'react-icons/gr'
 
 import { Search } from "react-feather"
 import { Fragment } from 'react'
-import { Link} from "react-router-dom"
+import { Link, useNavigate} from "react-router-dom"
 import { User} from "react-feather"
 import {
     Row,
@@ -36,6 +36,23 @@ function DRTable(props)
 {
     
     const {onsubmit, onclick ,setvalue,values,dataTable,prev}= props
+    const navigate=useNavigate();
+    const LoadEdit=(id)=>{
+     navigate("/edit-driver/"+id)
+    }
+    const RemoveFunction=(id)=>{
+        if(window.confirm('Do You Want to remove?')){
+            fetch(" http://localhost:5000/users/"+id,{
+                method:"DELETE",
+                
+            }).then((res)=>{
+              alert("Remove success")
+              window.location.reload()
+            }).catch((err)=>{
+                console.log(err.message)
+            })
+        }
+    }
 
     return(
         <Fragment>
@@ -103,25 +120,25 @@ function DRTable(props)
                                 </tr>
                             </MDBTableBody>
                         ) : (
-                            dataTable.map((item, index) => (
-                                <MDBTableBody key={index}>
+                            dataTable.map((item, id) => (
+                                <MDBTableBody key={id}>
                                     <tr>
                                         
                                         <td>{item.name}</td>
-                                        <td>{item.email}</td>
-                                        <td>{item.phone}</td>
-                                        <td>{item.address}</td>
-                                        <td>{item.statue}</td>
-                                        <td>{item.statue}</td>
+                                        <td>+({item.code}){item.phone}</td>
+                                        <td>{item.lastlocation}</td>
+                                        <td>{item.busLicence}</td>
+                                        <td>{item.created}</td>
+                                        <td>{item.lastUpdate}</td>
                                         <td><UncontrolledDropdown>
                                         <DropdownToggle className='icon-btn hide-arrow' color='transparent' size='sm' caret>
                                           <MoreVertical size={15} />
                                         </DropdownToggle>
                                         <DropdownMenu>
-                                         <DropdownItem href='/edit-driver'> 
+                                         <DropdownItem onClick={()=>{LoadEdit(item.id)}}> 
                                             <Edit className='me-50' size={15} /> <span className='align-middle'>Edit</span>
                                           </DropdownItem>
-                                          <DropdownItem href='/' onClick={e => e.preventDefault()}>
+                                          <DropdownItem onClick={()=>{RemoveFunction(item.id)}}>
                                             <Trash className='me-50' size={15} /> <span className='align-middle'>Delete</span>
                                           </DropdownItem>
                                           <DropdownItem href='/driver-map' >
