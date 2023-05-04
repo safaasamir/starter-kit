@@ -46,7 +46,7 @@ const AddDriver =()=>{
          
          </div>
          <div className="input-box">
-         <span className="details">Parent phone</span>
+         <span className="details">Driver phone</span>
          <input value={phone}  onChange={e=>phoneChange(e.target.value)} className='input' type="text" placeholder=" telephone" required></input>
          </div>
          <div className='child'>

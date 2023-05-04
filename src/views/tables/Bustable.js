@@ -31,6 +31,19 @@ import {
 function BusTable(props)
 {
     const {onsubmit, onclick ,setvalue,values,dataTable,prev}= props
+    const RemoveFunction=(id)=>{
+        if(window.confirm('Do You Want to remove?')){
+            fetch(" http://localhost:5000/bus/"+id,{
+                method:"DELETE",
+                
+            }).then((res)=>{
+              alert("Remove success")
+              window.location.reload()
+            }).catch((err)=>{
+                console.log(err.message)
+            })
+        }
+    }
 
     return(
         <Fragment>
@@ -97,16 +110,16 @@ function BusTable(props)
                                 </tr>
                             </MDBTableBody>
                         ) : (
-                            dataTable.map((item, index) => (
-                                <MDBTableBody key={index}>
+                            dataTable.map((item, id) => (
+                                <MDBTableBody key={id}>
                                     <tr>
 
-                                        <td>{item.name}</td>
-                                        <td>{item.email}</td>
-                                        <td>{item.phone}</td>
-                                        <td>{item.address}</td>
-                                        <td>{item.statue}</td>
-                                        <td><Link to ="/"><Trash className='me-50' size={25} color="black" /> <span className='align-middle'>Delete</span> </Link></td>
+                                        <td>{item.id}</td>
+                                        <td>{item.lecence}</td>
+                                        <td>{item.driver}</td>
+                                        <td>{item.buslecence}</td>
+                                        <td>{item.regestried}</td>
+                                        <td><Link onClick={()=>{RemoveFunction(item.id)}}><Trash className='me-50' size={25} color="black" /> <span className='align-middle'>Delete</span> </Link></td>
                                     </tr>
                                 </MDBTableBody>
                             ))

@@ -129,7 +129,7 @@ const Routes = [
   element: <EditDriver/>
 },
 {
-  path: "/edit-parent",
+  path: "/edit-parent/:empid",
   element: <EditParent/>
 },
   {

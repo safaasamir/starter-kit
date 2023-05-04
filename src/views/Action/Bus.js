@@ -33,7 +33,7 @@ function Bus() {
 
 
                 return await axios
-                    .get(`http://localhost:5000/users?q=${value}&_start=${start}&_end=${end}`)
+                    .get(`http://localhost:5000/bus?q=${value}&_start=${start}&_end=${end}`)
                     .then((response) => {
                         setData(response.data);
                         setCurrentPage(currentPage + increas);
@@ -44,7 +44,7 @@ function Bus() {
 
             default:
                 return await axios
-                    .get(`http://localhost:5000/users?_start=${start}&_end=${end}`)
+                    .get(`http://localhost:5000/bus?_start=${start}&_end=${end}`)
                     .then((response) => { setData(response.data); setCurrentPage(currentPage + increas) })
                     .catch((err) => console.log(err));
         }

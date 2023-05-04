@@ -8,6 +8,7 @@ import { Link} from "react-router-dom"
 import {  UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 import { MoreVertical, Edit, Trash } from 'react-feather'
 import { FiSend } from 'react-icons/fi'
+import {  useNavigate} from "react-router-dom"
 
 import {
     Row,
@@ -33,7 +34,23 @@ import {
 function ParentTable(props)
 {
     const {onsubmit, onclick ,setvalue,values,dataTable,prev}= props
-
+    const navigate=useNavigate();
+    const LoadEdit=(id)=>{
+     navigate("/edit-parent/"+id)
+    }
+    const RemoveFunction=(id)=>{
+        if(window.confirm('Do You Want to remove?')){
+            fetch(" http://localhost:5000/parents/"+id,{
+                method:"DELETE",
+                
+            }).then((res)=>{
+              alert("Remove success")
+              window.location.reload()
+            }).catch((err)=>{
+                console.log(err.message)
+            })
+        }
+    }
     return(
         <Fragment>
         <Card>
@@ -85,6 +102,7 @@ function ParentTable(props)
                                 <th scope="col">Telephone </th>
                                 <th scope="col">Location</th>
                                 <th scope="col">NoChild</th>
+                                <th scope="col">NameChildren</th>
                                 <th scope="col">Driver</th>
                                 <th scope="col">Created </th>
                                 <th scope="col">Wallet</th>
@@ -101,29 +119,30 @@ function ParentTable(props)
                                 </tr>
                             </MDBTableBody>
                         ) : (
-                            dataTable.map((item, index) => (
-                                <MDBTableBody key={index}>
+                            dataTable.map((item, id) => (
+                                <MDBTableBody key={id}>
                                     <tr>
 
                                         <td>{item.name}</td>
                                         <td>{item.email}</td>
-                                        <td>{item.phone}</td>
+                                        <td>+{item.code} {item.phone}</td>
                                         <td>{item.address}</td>
-                                        <td>{item.statue}</td>
-                                        <td>{item.statue}</td>
-                                        <td>{item.statue}</td>
-                                        <td>{item.statue}</td>
-                                        <td>{item.statue}</td>
+                                        <td>{item.NoChild}</td>
+                                        <td>{item.NameChildren}</td>
+                                        <td>{item.driver}</td>
+                                        <td>{item.created}</td>
+                                        <td>{item.wallet}</td>
+                                        <td>{item.payData}</td>
 
                                         <td><UncontrolledDropdown>
                                         <DropdownToggle className='icon-btn hide-arrow' color='transparent' size='sm' caret>
                                           <MoreVertical size={15} />
                                         </DropdownToggle>
                                         <DropdownMenu>
-                                          <DropdownItem href='/edit-parent' >
+                                          <DropdownItem onClick={()=>{LoadEdit(item.id)}} >
                                             <Edit className='me-50' size={15} /> <span className='align-middle'>Edit</span>
                                           </DropdownItem>
-                                          <DropdownItem href='/' onClick={e => e.preventDefault()}>
+                                          <DropdownItem onClick={()=>{RemoveFunction(item.id)}}>
                                             <Trash className='me-50' size={15} /> <span className='align-middle'>Delete</span>
                                           </DropdownItem>
                                           <DropdownItem href='/parents-map' >

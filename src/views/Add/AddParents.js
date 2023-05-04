@@ -1,22 +1,47 @@
 import '@src/views/Css/Add.css'
 import {Link}  from "react-router-dom"
 import { Icon } from '@iconify/react';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 const AddParent =()=>{
+     const [id,idChange]=useState("")
+    const [name,nameChange]=useState("")
+    const [code,codeChange]=useState("")
+    const [phone,phoneChange]=useState("")
+    const [bus,busChange]=useState("select")
+    const [validation,validationChange]=useState(false)
+    const navigate=useNavigate();
+    
+   const handlesubmit=(e)=>{
+    e.preventDefault();
+    const data ={name,code,phone,bus}
+    
+    fetch(" http://localhost:5000/parents",{
+        method:"POST",
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify(data)
+    }).then((res)=>{
+      alert("Saved success")
+      navigate('/parent-page')
+    }).catch((err)=>{
+        console.log(err.message)
+    })}
 
     return (
         <div className='cards card '>
         <div className="container">
         <div className="title">New parents </div>
-        <form action="#">
+        <form onSubmit={handlesubmit}>
          <div className="user-details">
          <div className="input-box">
          <span className="details" >Parent Name </span>
-         <input  className='input' type="text" placeholder=" name" required></input>
+         <input  value={name} onMouseDown={e=>validationChange(true)} className='input' type="text" placeholder=" name" required onChange={e=>nameChange(e.target.value)}></input>
 
          </div>
          <div className="input-box">
          <span className="details ">Select driver </span>
-         <select className='input'  name="drivers" id="driver">
+         <select  value={bus}  onChange={e=>busChange(e.target.value)} className='input'  name="drivers" id="driver">
          <option  value="ahmed">safaa jjjjjjjj </option>
          <option value="amrsaab"> amr aaaaaa </option>
          <option value="hamed">hamed bbbbb </option>
@@ -27,12 +52,12 @@ const AddParent =()=>{
          <div className="input-box">
          
          <span className="details">Country code</span>
-         <input className='input' type="text" placeholder=" + country code" required></input>
+         <input value={code}  onChange={e=>codeChange(e.target.value)} className='input' type="text" placeholder=" + country code" required></input>
          
          </div>
          <div className="input-box">
          <span className="details">Parent phone</span>
-         <input  className='input' type="text" placeholder=" telephone" required></input>
+         <input value={phone}  onChange={e=>phoneChange(e.target.value)} className='input' type="text" placeholder=" telephone" required></input>
          </div>
          
         <div className="child">
