@@ -46,7 +46,7 @@ const EditDriver= lazy(() => import("../../views/Edit/EditDriver"))
 const EditParent= lazy(() => import("../../views/Edit/EditParent"))
 const DriverMap=lazy(() => import("../../views/maps/DriverMap"))
 const ParentMap=lazy(() => import("../../views/maps/Parentsmap"))
-const DriversMap=lazy(() => import("../../views/maps/DriversMap"))
+const DriversMap=lazy(() => import("../../views/maps/leaflet/DriversMap"))
 const DriverParent=lazy(() => import("../../views/Action/DriverParents"))
 
 // ** Merge Routes
