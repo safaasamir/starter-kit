@@ -10,9 +10,13 @@ const AddParent =()=>{
     const [code,codeChange]=useState("")
     const [phone,phoneChange]=useState("")
     const [bus,busChange]=useState("select")
+    const [child,childChange]=useState(" ")
     const [validation,validationChange]=useState(false)
     const navigate=useNavigate();
-    
+     const Addchild=()=>{
+        e.preventDefault();
+        <input value={child}  onChange={e=>childChange(e.target.value)} className='input ms-3' type="text" placeholder=" child name" required></input>   
+     }
    const handlesubmit=(e)=>{
     e.preventDefault();
     const data ={name,code,phone,bus}
@@ -63,11 +67,11 @@ const AddParent =()=>{
         <div className="child">
          <div className="input-box">
          <span className="details">child Name </span>
-         <input  className='input' type="text" placeholder=" child name" required></input>
+          <input value={child}  onChange={e=>childChange(e.target.value)} className='input' type="text" placeholder=" child name" required></input>
          </div>
         
-         <Link className='btn btns' to=""><Icon icon="fluent:subtract-circle-20-regular" color="red" width="60" height="60" /></Link>
-         <Link className='btn btns' to=""><Icon icon="material-symbols:add-circle-outline-rounded" color="green" width="60" height="60" /></Link>
+         <Link className='btn btns'  ><Icon icon="fluent:subtract-circle-20-regular" color="red" width="60" height="60" /></Link>
+         <Link className='btn btns' onClick={()=>{Addchild(item.id)}}><Icon icon="material-symbols:add-circle-outline-rounded" color="green" width="60" height="60" /></Link>
          
          </div>
          </div>

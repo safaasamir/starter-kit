@@ -6,7 +6,7 @@ import { MoreVertical, Edit, Trash} from 'react-feather'
 import { FiSend ,FiUsers} from 'react-icons/fi'
 import { FaHistory } from 'react-icons/fa'
 import { GrNotification } from 'react-icons/gr'
-
+import AddDriver from '../Add/AddDriver'
 import { Search } from "react-feather"
 import { Fragment } from 'react'
 import { Link, useNavigate} from "react-router-dom"
@@ -32,10 +32,12 @@ import {
 } from "mdb-react-ui-kit";
 
 
+
 function DRTable(props)
 {
+   
     
-    const {onsubmit, onclick ,setvalue,values,dataTable,prev}= props
+    const {onsubmit, onclick ,setvalue,values,dataTable,prev,}= props
     const navigate=useNavigate();
     const LoadEdit=(id)=>{
      navigate("/edit-driver/"+id)
@@ -53,7 +55,8 @@ function DRTable(props)
             })
         }
     }
-
+    
+  
     return(
         <Fragment>
         <Card>
@@ -87,7 +90,9 @@ function DRTable(props)
                             <Button className=' ms-1 send-button' color="black" onClick={onclick}>
                                 Reset
                             </Button>
-                            <Link className=' mx-1  send-button btn d-block'  color="black" to="/AddDriver">Add</Link>
+                           
+                           <Link className=' mx-1  send-button btn d-block'  color="black" to={"/AddDriver"}  >Add</Link>
+                            
                             <Link className='   send-button btn d-block'  color="black" to="/drivers-map">Map</Link>
                         </form>
                     </Col>
@@ -104,7 +109,7 @@ function DRTable(props)
                                 <th scope="col">Name </th>
                                 <th scope="col">Telephone</th>
                                 <th scope="col">last-Location </th>
-                                <th scope="col">BusLicense</th>
+                                <th scope="col">Bus-License</th>
                                 <th scope="col">Created</th>
                                 <th scope="col">Last Update</th>
                                 <th scope="col">action </th>
@@ -169,6 +174,7 @@ function DRTable(props)
                 alignCenter: "center",
             }}>{prev}</div>
         </div>
+        
     </Fragment>
     )
 

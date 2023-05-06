@@ -12,15 +12,18 @@ import {
     MDBPaginationLink,
     MDBPagination,
 } from "mdb-react-ui-kit";
+import { Link, useNavigate} from "react-router-dom";
 
 import DRTable from '../tables/Drivertable'
+import AddDriver from '../Add/AddDriver';
+
 function Driver() {
     const [data, setData] = useState([]);
     const [value, setValue] = useState("");
     const [currentPage, setCurrentPage] = useState(0);
     const [operation, setOperation] = useState("");
     const [pageLimit] = useState(10);
-
+    const navigate=useNavigate();
     useEffect(() => {
         loadUserData(0, 10, 0);
     }, []);
@@ -69,8 +72,7 @@ function Driver() {
 
     };
 
-
-
+    
     const renderPagination = () => {
         if (data.length < 10 && currentPage === 0) return null
         if (currentPage === 0) {
@@ -113,11 +115,15 @@ function Driver() {
             );
         }
     };
+    
     return (
 
-
-        <DRTable onsubmit={handleSearch} onclick={handleReset} setvalue={setValue} values={value} dataTable={data} prev={renderPagination()}/>
-
+        
+        <DRTable onsubmit={handleSearch} onclick={handleReset} setvalue={setValue} values={value} dataTable={data} prev={renderPagination()} />
+        
+      
+        
+     
     );
 }
 

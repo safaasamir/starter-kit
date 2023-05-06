@@ -30,7 +30,7 @@ const EditParent =()=>{
       const [code,codeChange]=useState("")
       const [phone,phoneChange]=useState("")
       const [bus,busChange]=useState("select")
-      const [validation,validationChange]=useState(false)
+      const [validation,validationChange]=useState("")
       const [child,childChange]=useState(false)
       const navigate=useNavigate();
       

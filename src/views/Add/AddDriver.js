@@ -1,19 +1,28 @@
 import '@src/views/Css/Add.css'
+import { options } from 'preact'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-const AddDriver =()=>{
+const AddDriver =(props)=>{
+  
+    const options=[
+       { label:"b69", value:"b69"},
+       { label:"h95", value:"h95"},
+       { label:"kl6", value:"kl6"},
+    ]
 
     const [id,idChange]=useState("")
     const [name,nameChange]=useState("")
     const [code,codeChange]=useState("")
     const [phone,phoneChange]=useState("")
-    const [bus,busChange]=useState("select")
+    const {dataTables}=props
     const [validation,validationChange]=useState(false)
+    const [busLicence,optchange]=useState(" ")
     const navigate=useNavigate();
+    
     
    const handlesubmit=(e)=>{
     e.preventDefault();
-    const data ={name,code,phone,bus}
+    const data ={name,code,phone,busLicence}
     
     fetch(" http://localhost:5000/users",{
         method:"POST",
@@ -54,12 +63,10 @@ const AddDriver =()=>{
 
          <span className="details ">Select Bus </span>
          
-         <select value={bus}  onChange={e=>busChange(e.target.value)} className='input'  name="drivers" id="driver">
-         <option  value="ahmed">safaa jjjj </option>
-         <option value="amrsaab"> amr uuuuu </option>
-         <option value="hamed">hamed pppp </option>
-         <option value="noah">noah hhhh </option>
-         <option value="another">another </option>
+         <select  value ={busLicence} onChange={e=>optchange(e.target.value)} className='input'  name="drivers" id="driver">
+        {options.map((option,id)=>(
+            <option value={option.value} key={id} >{option.label}</option>
+        ))}
       </select>
       
          </div>
