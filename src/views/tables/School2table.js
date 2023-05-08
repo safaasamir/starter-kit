@@ -66,7 +66,7 @@ function SchTable(props)
                             <Button className=' mx-1  send-button' color="black" onClick={onclick}>
                                 Reset
                             </Button>
-                            <Link  className='   send-button btn d-block' color="black"to="/AddDriver">Add </Link>
+                            <Link  className='   send-button btn d-block' color="black"to="/school-page">Add </Link>
                             
                         </form>
                     </Col>

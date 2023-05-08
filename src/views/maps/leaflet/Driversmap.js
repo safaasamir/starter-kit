@@ -12,6 +12,7 @@ import "@src/views/Css/Map.css"
 import { Fragment } from 'react'
 // import { Link} from "react-router-dom"
 // import { User} from "react-feather"
+import teslaData from "../../../../db.json"
 import {
     Row,
     Col,
@@ -93,17 +94,16 @@ import {
 
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import "./Driversmap.css"
-// import {
-  
-//   Card,
-  
 
-// } from 'reactstrap'
-//  import { Fragment } from 'react'
+
 function DriversMap() {
+
+
+  const{id,filter}=teslaData.maps;
+  const filteredStations=teslaData.maps.filter(tsla=>tsla.address.country=="Italy")
   return (
   
-
+    
     <Fragment>
         <Card>
             <div className='invoice-list-table-header w-100 me-1 ms-10 mt-0 mb-30 '>
@@ -122,16 +122,26 @@ function DriversMap() {
         <Card > <div className='containers '>
 
         
-    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+    <MapContainer center={[41.684399, 14.207605]} zoom={6} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+       {filteredStations.map(tsla=>(
+         
+        <Marker key={tsla.id} position={[tsla.gps.latitude, tsla.gps.longitude]}>
+            <Popup position={[tsla.gps.latitude, tsla.gps.longitude]}>
+                <div>
+                <h4>
+                {"Name: " + tsla.name}
+
+                </h4></div>
+            </Popup>
+        
+
+        </Marker>
+       ))}
+      
     </MapContainer>
     </div></Card>
         </Fragment>
