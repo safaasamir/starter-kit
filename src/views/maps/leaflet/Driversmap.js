@@ -13,6 +13,7 @@ import { Fragment } from 'react'
 // import { Link} from "react-router-dom"
 // import { User} from "react-feather"
 import teslaData from "../../../../db.json"
+import React, { useState, useEffect } from "react";
 import {
     Row,
     Col,
@@ -94,13 +95,23 @@ import {
 
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import "./Driversmap.css"
-
+import axios from 'axios'
 
 function DriversMap() {
 
+  const link="http://localhost:5000/maps"
+  useEffect(() => {
+    async function fetchData() {
+      const Response = await axios.get(`${link}`);
+      console.log(Response)
+     
+    }
+
+    fetchData();
+  }, []);
 
   const{id,filter}=teslaData.maps;
-  const filteredStations=teslaData.maps.filter(tsla=>tsla.address.country=="Italy")
+  const filteredStations=teslaData.maps.filter(tsla=>tsla.address.country=="Egypt")
   return (
   
     
@@ -122,7 +133,7 @@ function DriversMap() {
         <Card > <div className='containers '>
 
         
-    <MapContainer center={[41.684399, 14.207605]} zoom={6} scrollWheelZoom={true}>
+    <MapContainer center={[31.265289, 32.301865]} zoom={6} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -135,7 +146,9 @@ function DriversMap() {
                 <h4>
                 {"Name: " + tsla.name}
 
-                </h4></div>
+                </h4>
+                <p>{"Address: " +tsla.address}</p>
+                <p></p></div>
             </Popup>
         
 
