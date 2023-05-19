@@ -48,13 +48,16 @@ const Profile = () => {
                             </Col>
                             </Row>
                             <Row>
-                            <Col sm='6' className='mb-1'>
+                            { 
+                                <Col sm='6' className='mb-1'>
                                 <Label className='form-label' for='phNumber'>
                                     Phone Number
                                 </Label>
-                                <Input id='phoneumber' placeholder='123456' />
+                                <Input id='phNumber'  className='form-control'
+                                placeholder='1 234 567 8900'  name='phNumber' />
 
-                            </Col>
+                                </Col> 
+                            }
                            
                             <Col sm='6' className='mb-1'>
                               
