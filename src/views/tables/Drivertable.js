@@ -131,7 +131,7 @@ function DRTable(props)
                                         
                                         <td>{item.name}</td>
                                         <td>+({item.code}){item.phone}</td>
-                                        <td>{item.lastlocation}</td>
+                                        <td >{item.lastlocation}</td>
                                         <td>{item.busLicence}</td>
                                         <td>{item.created}</td>
                                         <td>{item.lastUpdate}</td>

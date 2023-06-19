@@ -30,8 +30,8 @@ const EditParent =()=>{
       const [code,codeChange]=useState("")
       const [phone,phoneChange]=useState("")
       const [bus,busChange]=useState("select")
-      const [validation,validationChange]=useState("")
-      const [child,childChange]=useState(false)
+      const [validation,validationChange]=useState(false)
+      const [child,childChange]=useState()
       const navigate=useNavigate();
       
      const handlesubmit=(e)=>{
@@ -57,7 +57,7 @@ const EditParent =()=>{
          <div className="user-details">
          <div className="input-box">
          <span className="details" >Parent Name </span>
-         <input value={name} onMouseDown={e=>validationChange(true)}  onChange={e=>nameChange(e.target.value)} className='input' type="text" placeholder=" name" required></input>
+         <input value={name} onMouseDown={e=>validationChange(true)}  onChange={e=>nameChange(e.target.value)} className='input' type="text" placeholder=" name" required/>
          {name.length==0 && validation &&  <span className='text-danger'> Enter the name</span>}
          </div>
          <div className="input-box">
@@ -95,7 +95,7 @@ const EditParent =()=>{
          </div>
          
          <div className='button'><input type="submit" name="" value=" Save"/></div>
-         <div className='button'><input type="submit "   on Click={(e)=>{navigate("/parent-page")}} name="" value=" Cancel"/></div>
+         <div className='button'><input type="submit" onClick={(e)=>{navigate("/parent-page")}} name="" value=" Cancel"/></div>
         
         </form>
         </div>

@@ -8,7 +8,7 @@ import { Sun, Moon, Menu } from "react-feather"
 
 // ** Reactstrap Imports
 import { NavItem, NavLink } from "reactstrap"
-import NavbarSearch from "./NavbarSearch"
+
 
 const ThemeNavbar = (props) => {
   // ** Props

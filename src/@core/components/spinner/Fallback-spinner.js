@@ -1,6 +1,6 @@
 // ** Logo
 import logo from "@src/assets/images/logo/logos.png";
-import "@styles/base/core/menu/menu-types/vertical-menu2.scss";
+import "@styles/base/core/menu/menu-types/vertical-menu.scss";
 const SpinnerComponent = () => {
   return (
     <div className="fallback-spinner app-loader">

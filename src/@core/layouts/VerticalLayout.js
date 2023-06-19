@@ -37,7 +37,7 @@ import { useFooterType } from "@hooks/useFooterType";
 import { useNavbarColor } from "@hooks/useNavbarColor";
 
 // ** Styles
-import "@styles/base/core/menu/menu-types/vertical-menu2.scss";
+import "@styles/base/core/menu/menu-types/vertical-menu.scss";
 import "@styles/base/core/menu/menu-types/vertical-overlay-menu.scss";
 
 const VerticalLayout = (props) => {
