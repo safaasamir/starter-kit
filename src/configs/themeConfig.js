@@ -13,7 +13,7 @@ const themeConfig = {
     isRTL: false,
     skin: "light", // light, dark, bordered, semi-dark
     type: "vertical", // vertical, horizontal
-    contentWidth: "boxed", // full, boxed
+    contentWidth: "full", // full, boxed
     menu: {
       isHidden: false,
       isCollapsed: false,
@@ -26,7 +26,7 @@ const themeConfig = {
     footer: {
       type: "static", // static, sticky, hidden
     },
-    customizer: true,
+    customizer: false,
     scrollTop: true, // Enable scroll to top button
     toastPosition: "top-right", // top-left, top-center, top-right, bottom-left, bottom-center, bottom-right
   },

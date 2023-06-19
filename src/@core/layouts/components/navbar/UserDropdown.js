@@ -25,6 +25,7 @@ import {
 
 // ** Default Avatar Image
 import defaultAvatar from "@src/assets/images/portrait/small/avatar-s-11.jpg"
+import avat from "@src/views/Img/avat.jpg"
 
 const UserDropdown = (props) => {
   const{usernames,emails,here}=props;
@@ -51,9 +52,9 @@ const UserDropdown = (props) => {
           <span className="user-status">{emails} </span>
         </div>
         <Avatar
-          img={defaultAvatar}
-          imgHeight="40"
-          imgWidth="40"
+          img={avat}
+          imgHeight="50"
+          imgWidth="50"
           status="online"
         />
       </DropdownToggle>
@@ -66,10 +67,7 @@ const UserDropdown = (props) => {
           <Mail size={14} className="me-75" />
           <span className="align-middle">Inbox</span>
         </DropdownItem>
-        <DropdownItem tag={Link} to="/edit-password" >
-          <Lock size={14} className="me-75" />
-          <span className="align-middle">Password</span>
-        </DropdownItem>
+       
         <DropdownItem divider />
         <DropdownItem
           tag={Link}

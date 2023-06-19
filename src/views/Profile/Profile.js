@@ -2,24 +2,49 @@ import "@src/views/Css/Profile.css"
 import { User } from "react-feather"
 import { Fragment } from "react";
 import Select from 'react-select'
+import { useRef,useState } from "react";
 import InputPasswordToggle from '@components/input-password-toggle'
 import { Row, Col, Form, Card, Input, Label, Button, CardBody, CardTitle, CardHeader, FormFeedback } from 'reactstrap'
+import { JsonWebTokenError } from "jsonwebtoken";
 const Profile = () => {
+    const inputRef = useRef(null)
+    const[image,setImage]=useState("")
+    const handleImageClick=()=>{
+        inputRef.current.click()
+    }
+    const handleImageChange=(event)=>{
+        const file=event.target.files[0];
+        console.log(file)
+        setImage(event.target.files[0])
+    }
+
+//  const profileChange=()=>{
+//     fetch("https://profile-e9de4-default-rtdb.firebaseio.com/profile.json",{
+//         method:"POST",
+//         body:JSON.stringify(),
+//         headers:{
+//             "Content-Type":"application/json"
+//         }
+//     })
+//  }
     return (
         <Fragment >
         
             <Card >
+            
                 <CardHeader className='border-bottom'>
                     <CardTitle tag='h4'>Profile Details</CardTitle>
                 </CardHeader>
                 <CardBody  className='py-2 my-25 '>
                     <div   className='d-flex'>
-                        <div className='me-25'>
-                            <img className='rounded me-50' alt='Generic placeholder image' height='100' width='100' />
+                        <div className='me-25' >
+                        {image ? <img src={URL.createObjectURL(image)} alt="" height='100' width='100'/>:<img className='rounded me-50' alt='Generic placeholder image' height='100' width='100' /> }
+                            
+                            <input ref={inputRef} type="file" onChange={handleImageChange} style={{ display:"none" }}/>
                         </div>
                         <div className='d-flex align-items-end mt-75 ms-1'>
                             <div>
-                                <Button className='mb-75 me-75' size='sm' color='primary'>
+                                <Button onClick={handleImageClick} className='mb-75 me-75' size='sm' color='primary'>
                                     Upload
                                     <Input type='file' hidden accept='image/*' />
                                 </Button>
@@ -50,11 +75,11 @@ const Profile = () => {
                             <Row>
                             { 
                                 <Col sm='6' className='mb-1'>
-                                <Label className='form-label' for='phNumber'>
-                                    Phone Number
+                                <Label className='form-label' for='email'>
+                                    Email
                                 </Label>
-                                <Input id='phNumber'  className='form-control'
-                                placeholder='1 234 567 8900'  name='phNumber' />
+                                <Input id='email'  className='form-control'
+                                placeholder='email'  name='email' />
 
                                 </Col> 
                             }
@@ -115,8 +140,9 @@ const Profile = () => {
                     </Form>
                     
                 </CardBody>
+               
             </Card>
-           
+            
         </Fragment>
     )
 }

@@ -24,27 +24,12 @@ import {
 import avatar3 from "@src/assets/images/portrait/small/avatar-s-3.jpg";
 import avatar15 from "@src/assets/images/portrait/small/avatar-s-15.jpg";
 
+
 const NotificationDropdown = () => {
   // ** Notification Array
   const notificationsArray = [
-    {
-      img: avatar3,
-      subtitle: "Won the monthly best seller badge.",
-      title: (
-        <p className="media-heading">
-          <span className="fw-bolder">Congratulation Sam 🎉</span>winner!
-        </p>
-      ),
-    },
-    {
-      img: avatar15,
-      subtitle: "You have 10 unread messages.",
-      title: (
-        <p className="media-heading">
-          <span className="fw-bolder">New message</span>&nbsp;received
-        </p>
-      ),
-    },
+    
+    
     {
       avatarContent: "MD",
       color: "light-danger",
@@ -183,7 +168,7 @@ const NotificationDropdown = () => {
       >
         <Bell size={21} />
         <Badge pill color="danger" className="badge-up">
-          5
+          4
         </Badge>
       </DropdownToggle>
       <DropdownMenu end tag="ul" className="dropdown-menu-media mt-0">
@@ -191,7 +176,7 @@ const NotificationDropdown = () => {
           <DropdownItem className="d-flex" tag="div" header>
             <h4 className="notification-title mb-0 me-auto">Notifications</h4>
             <Badge tag="div" color="light-primary" pill>
-              6 New
+              4 New
             </Badge>
           </DropdownItem>
         </li>

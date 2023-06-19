@@ -27,7 +27,7 @@ const TemplateTitle = "%s - Vuexy React Admin Template"
 // ** Default Route
 const DefaultRoute = "/home"
 
-const Home = lazy(() => import("../../views/Home"))
+const Home = lazy(() => import("../../views/tables/Dashboard"))
 const SchoolPage = lazy(() => import("../../views/Action/SchoolPage"))
 const Schooladmin = lazy(() => import("../../views/Action/Schooladmin"))
 const Login = lazy(() => import("../../views/Api/loginApi"))
@@ -48,6 +48,7 @@ const DriverMap=lazy(() => import("../../views/maps/DriverMap"))
 const ParentMap=lazy(() => import("../../views/maps/Parentsmap"))
 const DriversMap=lazy(() => import("../../views/maps/leaflet/DriversMap"))
 const DriverParent=lazy(() => import("../../views/Action/DriverParents"))
+const Chat=lazy(() => import("../../views/Chat/Home"))
 
 // ** Merge Routes
 const Routes = [
@@ -116,6 +117,10 @@ const Routes = [
     path: "/AddParent",
     element: <Add/>,
     
+  },
+  {
+    path: "/Chat-admin",
+    element: <Chat />
   },
 {
 

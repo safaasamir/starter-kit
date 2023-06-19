@@ -15,6 +15,12 @@ export default [
     navLink: "/school-admin"
   },
   {
+    id: 'chat',
+    title: 'Chat',
+    icon: <Icon icon="ph:chat-bold" color="gray" width="50" height="50" />,
+    navLink: '/Chat-admin'
+  },
+  {
     id: "Plans",
     title: "Plans",
     icon: <Icon icon="fa6-solid:handshake" color="gray" width="50" height="50" />,

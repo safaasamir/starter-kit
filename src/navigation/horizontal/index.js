@@ -5,7 +5,7 @@ export default [
     id: "Dashboard",
     title: "Dashboard",
     icon: <Icon icon="icon-park-outline:dashboard-one" color="gray" width="50" height="50" />,
-    navLink:  "/second-page"
+    navLink:  "/home"
   },
   
   {
@@ -13,6 +13,12 @@ export default [
     title: "Schools",
     icon: <Icon icon="teenyicons:school-outline" width="50" height="50" />,
     navLink: "/school-admin"
+  },
+  {
+    id: 'chat',
+    title: 'Chat',
+    icon: <Icon icon="ph:chat-bold" color="gray" width="50" height="50" />,
+    navLink: '/Chat-admin'
   },
   {
     id: "Plans",
