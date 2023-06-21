@@ -6,13 +6,12 @@ import"./Style.scss"
 const Home = () => {
     return (
         <div className='home'>
-           <div className='cont'>
-           <Sidebar/>
-           <Chat/>
+          
+        <iframe  height="100%" width="100%" src="https://dashboard.tawk.to/#/dashboard/64910b4794cf5d49dc5eb43b" title="Chat"></iframe>
            
            </div>
 
-        </div>
+        
     );
 }
 

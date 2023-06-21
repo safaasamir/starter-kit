@@ -21,7 +21,8 @@ $darkColor:#2f2d52;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+   
     .cont{
         border: 1px solid white;
         border-radius: 10px;
@@ -29,6 +30,7 @@ $darkColor:#2f2d52;
         height: 80%;
         display: flex;
         overflow: hidden;
+        margin-left: 10px;
         @include tablet{
             width: 90%;
         }

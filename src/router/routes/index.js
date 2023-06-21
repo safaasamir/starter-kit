@@ -49,13 +49,21 @@ const ParentMap=lazy(() => import("../../views/maps/Parentsmap"))
 const DriversMap=lazy(() => import("../../views/maps/leaflet/DriversMap"))
 const DriverParent=lazy(() => import("../../views/Action/DriverParents"))
 const Chat=lazy(() => import("../../views/Chat/Home"))
-
+const Error404=lazy(() => import("../../views/Error/Eror404"))
 // ** Merge Routes
 const Routes = [
   {
     path: "/",
     index: true,
     element: <Navigate replace to={DefaultRoute} />,
+  },
+
+  {
+    path: "*",
+    element: <Error404 />,
+    meta: {
+      layout: "blank",
+    },
   },
   {
     path: "/home",

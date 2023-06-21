@@ -24,6 +24,7 @@ function Driver() {
     const [operation, setOperation] = useState("");
     const [pageLimit] = useState(10);
     const navigate=useNavigate();
+    const [errors,setErrors]=useState([])
     useEffect(() => {
         loadUserData(0, 10, 0);
     }, []);
@@ -51,7 +52,10 @@ function Driver() {
                     .get(`http://localhost:5000/users?_start=${start}&_end=${end}`)
                     
                     .then((response) => { setData(response.data); setCurrentPage(currentPage + increas) })
-                    .catch((err) => console.log(err));
+                    .catch((err) =>
+                     {
+                        setErrors(err.response.data.errors)
+                    });
         }
 
     };
