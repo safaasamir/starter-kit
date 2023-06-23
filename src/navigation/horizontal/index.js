@@ -1,6 +1,9 @@
-import { Mail, Home, User } from "react-feather"
+import { User } from "react-feather"
 import { Icon } from '@iconify/react'
+
 export default [
+
+  
   {
     id: "Dashboard",
     title: "Dashboard",

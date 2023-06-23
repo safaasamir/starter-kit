@@ -1,6 +1,7 @@
 
 import '@styles/react/libs/tables/react-dataTable-component.scss'
 import '@styles/react/libs/react-select/_react-select.scss'
+import "@styles/base/core/menu/menu-types/vertical-menu.scss";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -15,7 +16,7 @@ import {
 import { Link, useNavigate} from "react-router-dom";
 
 import DRTable from '../tables/Drivertable'
-import AddDriver from '../Add/AddDriver';
+
 
 function Driver() {
     const [data, setData] = useState([]);
@@ -24,40 +25,91 @@ function Driver() {
     const [operation, setOperation] = useState("");
     const [pageLimit] = useState(10);
     const navigate=useNavigate();
+    const [isLoading,setIsLoading]= useState(true)
     const [errors,setErrors]=useState([])
     useEffect(() => {
+        setIsLoading(true);
         loadUserData(0, 10, 0);
+        
+       
     }, []);
 
 
     const loadUserData = async (start, end, increas, optType = null) => {
+
+        
         switch (optType) {
             case "search":
                 setOperation(optType);
 
 
                 return await axios
-                    .get(`http://localhost:5000/users?q=${value}&_start=${start}&_end=${end}`)
-                    .then((response) => {
+                    .get(`https://tables-da37f-default-rtdb.firebaseio.com/users.json?q=${value}&_start=${start}&_end=${end}`)
+                    
+                    .then((response)=> { 
+                            
+                        const driverDatas=[];
+                        for(const key in response.data)
+                        {   console.log([key])
+                            const driverData={
+                                id:key,
+                                ...response.data[key]
+                            }
+                            driverDatas.push(driverData)
+                            console.log(value)
+                            
+                        }
 
-                        setData(response.data);
-                        setCurrentPage(currentPage + increas);
-                    })
-                    .catch((err) => console.log(err)
+                        
+                        setData(driverDatas);
+                         setCurrentPage(currentPage + increas);
+                         setIsLoading(false) 
+                         
+                        })
+                    .catch((err) => {
+                        console.log(err)
+                        
+                    
+                    }
+                    
 
                     );
-
+                    
+                  
             default:
                 return await axios
-                    .get(`http://localhost:5000/users?_start=${start}&_end=${end}`)
+                    .get(`https://tables-da37f-default-rtdb.firebaseio.com/users.json?_start=${start}&_end=${end}`)
                     
-                    .then((response) => { setData(response.data); setCurrentPage(currentPage + increas) })
+                      .then((response)=> { 
+                            
+                        const driverDatas=[];
+                        for(const key in response.data)
+                        {   
+                            const driverData={
+                                id:key,
+                                ...response.data[key]
+                            }
+                            driverDatas.push(driverData)
+                            
+                            
+                        }
+
+                        
+                        setData(driverDatas);
+                         setCurrentPage(currentPage + increas);
+                         setIsLoading(false) 
+                         
+                        })
                     .catch((err) =>
                      {
-                        setErrors(err.response.data.errors)
+                        console.log(err)
+                        setErrors(err.response.data)
+                        
                     });
+                    
         }
-
+        
+               
     };
 
 
@@ -119,11 +171,23 @@ function Driver() {
             );
         }
     };
+    if (isLoading){
+        return (<div className="fallback-spinner app-loader">
+        
+        <div className="loading">
+          <div className="effect-1 effects"></div>
+          <div className="effect-2 effects"></div>
+          <div className="effect-3 effects"></div>
+        </div>
+      </div>)
+      
+    }
+
     
     return (
 
         
-        <DRTable onsubmit={handleSearch} onclick={handleReset} setvalue={setValue} values={value} dataTable={data} prev={renderPagination()} />
+        <DRTable onsubmit={handleSearch} onclick={handleReset} setvalue={setValue} values={value} setdata={setData} dataTable={data} prev={renderPagination()} />
         
       
         

@@ -65,6 +65,8 @@ const HorizontalLayout = (props) => {
   // ** Handles Content Width
   const setIsHidden = (val) => dispatch(handleMenuHidden(val));
 
+  const [t, i18n ]  = useTranslation();
+
   // ** UseEffect Cleanup
   const cleanup = () => {
     setIsMounted(false);

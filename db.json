@@ -8,9 +8,9 @@
     },
     {
       "userName": "jdjsbsJ",
-      "id": "cmdzsbjdsB@gmail.com",
+      "id": "cmdzsbjdsb@gmail.com",
       "phone": "7896541232",
-      "password": "123456"
+      "password": "12345"
     },
     {
       "userName": "manar",
@@ -19,48 +19,7 @@
       "password": "12345678"
     }
   ],
-  "users": [
-    {
-      "name": "she",
-      "code": "02",
-      "phone": "222222",
-      "lastlocation": "map",
-      "busLicence": "kjk",
-      "created": "kk",
-      "lastUpdate": "25/10/2020",
-      "id": "1"
-    },
-    {
-      "name": "he",
-      "code": "02",
-      "phone": "222222",
-      "lastlocation": "map",
-      "busLicence": "poi",
-      "created": "kk",
-      "lastUpdate": "25/10/2020",
-      "id": "2"
-    },
-    {
-      "name": "it",
-      "code": "02",
-      "phone": "222222",
-      "lastlocation": "map",
-      "busLicence": "hfd",
-      "created": "kk",
-      "lastUpdate": "25/10/2020",
-      "id": "3"
-    },
-    {
-      "name": "you",
-      "code": "02",
-      "phone": "222222",
-      "lastlocation": "map",
-      "busLicence": "poi",
-      "created": "kk",
-      "lastUpdate": "25/10/2020",
-      "id": "4"
-    }
-  ],
+  
   "parents": [
     {
       "name": "you",
@@ -141,7 +100,6 @@
       "buslecence": "1523468",
       "regestried": "whyy"
     }
-
   ],
   "maps": [
     {

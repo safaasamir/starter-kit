@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "mdb-react-ui-kit/dist/css/mdb.min.css "
+
 // ** Redux Imports
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
@@ -19,6 +20,7 @@ import themeConfig from "./configs/themeConfig";
 // ** Toast
 import { Toaster } from "react-hot-toast";
 
+import "./i18n"
 // ** Spinner (Splash Screen)
 import Spinner from "./@core/components/spinner/Fallback-spinner";
 
@@ -51,22 +53,25 @@ const LazyApp = lazy(() => import("./App"));
 const container = document.getElementById("root");
 const root = createRoot(container);
 
+
 axios.defaults.baseURL = 'http://grabt.restart-technology.com/api';
 // axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 root.render(
   <BrowserRouter>
-    <Provider store={store}>
-      <Suspense fallback={<Spinner />}>
-        <ThemeContext>
-          <LazyApp />
-          <Toaster
-            position={themeConfig.layout.toastPosition}
-            toastOptions={{ className: "react-hot-toast" }}
-          />
-        </ThemeContext>
-      </Suspense>
-    </Provider>
+    
+      <Provider store={store}>
+        <Suspense fallback={<Spinner />}>
+          <ThemeContext>
+            <LazyApp />
+            <Toaster
+              position={themeConfig.layout.toastPosition}
+              toastOptions={{ className: "react-hot-toast" }}
+            />
+          </ThemeContext>
+        </Suspense>
+      </Provider>
+    
   </BrowserRouter>
 );
 

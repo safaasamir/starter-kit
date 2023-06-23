@@ -75,7 +75,7 @@ const AddParent =()=>{
          
          </div>
          </div>
-         <div className='button'><input type="submit" name="" value=" Save"/></div>
+         <div className='button'><button className='inputs' type="submit" name="" value=" Save"></button></div>
           
         </form>
         </div>

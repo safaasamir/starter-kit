@@ -37,19 +37,33 @@ function DRTable(props)
 {
    
     
-    const {onsubmit, onclick ,setvalue,values,dataTable,prev,}= props
+    const {onsubmit, onclick ,setvalue,values,dataTable,prev,setdata}= props
     const navigate=useNavigate();
     const LoadEdit=(id)=>{
      navigate("/edit-driver/"+id)
     }
     const RemoveFunction=(id)=>{
         if(window.confirm('Do You Want to remove?')){
-            fetch(" http://localhost:5000/users/"+id,{
-                method:"DELETE",
+            fetch(`https://tables-da37f-default-rtdb.firebaseio.com/users/${id}.json`,{
+
+                 method: "DELEtE",
+                 mode: "cors",
+                  headers: {
+                  "Content-Type": "application/json",
+                  
+                },
                 
-            }).then((res)=>{
-              alert("Remove success")
-              window.location.reload()
+            }).then(()=>{
+                  
+                alert("Remove success")
+                setdata(
+                    dataTable.filter((datatables) => {
+                      return datatables.id !== id;
+                    })
+                 );
+
+              
+             // window.location.reload()
             }).catch((err)=>{
                 console.log(err.message)
             })
@@ -125,16 +139,16 @@ function DRTable(props)
                                 </tr>
                             </MDBTableBody>
                         ) : (
-                            dataTable.map((item, id) => (
-                                <MDBTableBody key={id}>
+                            dataTable.map((item) => (
+                                <MDBTableBody key={item.id}>
                                     <tr>
                                         
                                         <td>{item.name}</td>
                                         <td>+({item.code}){item.phone}</td>
                                         <td >{item.lastlocation}</td>
                                         <td>{item.busLicence}</td>
-                                        <td>{item.created}</td>
-                                        <td>{item.lastUpdate}</td>
+                                        <td>{item.created_at}</td>
+                                        <td>{item.updated_at}</td>
                                         <td><UncontrolledDropdown>
                                         <DropdownToggle className='icon-btn hide-arrow' color='transparent' size='sm' caret>
                                           <MoreVertical size={15} />

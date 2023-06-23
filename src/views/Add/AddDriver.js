@@ -2,10 +2,39 @@ import '@src/views/Css/Add.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react';
-const AddDriver =()=>{
-  
-   
 
+
+
+import { NavLink } from 'react-router-dom';
+import { Button } from 'reactstrap';
+import styled from "styled-components"
+const AddDriver =()=>{
+    const Wrapper = styled.section`
+
+    .Errorcontainer {
+        padding: 9rem 0 ;
+        text-align:center;
+    
+        h2 {
+          font-size:10rem;
+          color:#FEC628;
+        }
+        h3{
+            font-size: 4.2rem;
+            color:#FEC628;
+        }
+    
+        p{
+            margin:2rem 0;
+            color:#FEC628;
+        }
+    }
+    
+    `
+   
+    const [loading, setIsLoading] = useState(true);
+    const [load, setLoading] = useState(false);
+    const [error, setError] = useState("");
     
     const [name,nameChange]=useState("")
     const [code,codeChange]=useState("")
@@ -45,21 +74,64 @@ const AddDriver =()=>{
         { label:"kl6", value:"kl6"},
         
      ]
+
+
+    const getCurrentDate=(separator='/')=>{
+
+        let newDate = new Date()
+        let date = newDate.getDate();
+        let month = newDate.getMonth() + 1;
+        let year = newDate.getFullYear();
+
+        
+        return `${year}${separator}${month<10?`0${month}`:`${month}`}${separator}${date}`
+        }
+
+        const getCurrentTimeDate=(separator='/')=>{
+
+            let newDate = new Date()
+            let date = newDate.getDate();
+            let month = newDate.getMonth() + 1;
+            let year = newDate.getFullYear();
+            let today = new Date()
+            let time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+            
+            return `${year}${separator}${month<10?`0${month}`:`${month}`}${separator}${date}${"--"}${time}`
+            }
+    
+
    const handlesubmit=(e)=>{
     e.preventDefault();
     const data ={name,code,phone,busLicence}
-
-    
-    
-    fetch(" http://localhost:5000/users",{
+    setLoading(true)
+    data.created_at = getCurrentDate();
+    data.updated_at = getCurrentTimeDate();
+    data.lastlocation = //" elsmalia Suez Canal Univerisity"
+    "portsaid elzohour"
+    console.log(data);
+    fetch("https://tables-da37f-default-rtdb.firebaseio.com/users.json",{
         method:"POST",
-        headers:{"content-type":"application/json"},
+        headers:{"Content-Type":"application/json"},
         body:JSON.stringify(data)
     }).then((res)=>{
       alert("Saved success")
       navigate('/driver')
     }).catch((err)=>{
         console.log(err.message)
+        setIsLoading(false);
+        setError(<Wrapper>
+            <div className='Errorcontainer'>
+                <div>
+                    <h2>404</h2>
+                    <h3>UH OH! you're not connect.</h3>
+                    <p>
+                       please check your connect and try again   </p>
+                        <NavLink to="/driver">
+                        <button type="button" className="btn btn-warning">Reload</button>
+                    </NavLink>
+                </div>
+            </div>
+        </Wrapper>);
     })
    }
    const handleok=(e)=>{
@@ -68,7 +140,14 @@ const AddDriver =()=>{
   
   
    }
-
+   if (error) {
+    return (
+      <div className="alert alert-danger">
+        <h3 className="text-center">{error}</h3>
+       
+      </div>
+    );
+  }
     return (
         <div className='cards card'>
         <div className="container">
@@ -84,12 +163,12 @@ const AddDriver =()=>{
          <div className="input-box">
          
          <span className="details">Country code</span>
-         <input value={code}  onChange={e=>codeChange(e.target.value)} className='input' type="text" placeholder=" + country code" required ></input>
+         <input value={code}  disabled={load}  onChange={e=>codeChange(e.target.value)} className='input' type="text" placeholder=" + country code" required ></input>
          {code.length==0 && validation &&  <span className='text-danger'> Enter the code</span>}
          </div>
          <div className="input-box">
          <span className="details">Driver phone</span>
-         <input value={phone}  onChange={e=>phoneChange(e.target.value)} className='input' type="text" placeholder=" telephone" required  ></input>
+         <input value={phone}   disabled={load}  onChange={e=>phoneChange(e.target.value)} className='input' type="text" placeholder=" telephone" required  ></input>
          {phone.length==0 && validation &&  <span className='text-danger'> Enter the phone</span>}
          </div>
          <div className='child'>
@@ -106,7 +185,7 @@ const AddDriver =()=>{
          </div>
            {
 
-           show?<button  onClick={()=>handleAdd()} className='btn btns word'><span >New</span></button>:null
+           show?<button  disabled={load} onClick={()=>handleAdd()} className='btn btns word'><span >New</span></button>:null
            }
            
          {val.map((databus,i)=>{
@@ -129,7 +208,21 @@ const AddDriver =()=>{
          </div>
          </div>
 
-         <div className='button'><input type="submit" name="" value=" Save"/></div>
+         <div className='button' > <button className='inputs' type="submit" name="" disabled={load}>
+         {load? (
+            <>
+              <span
+                className="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Loading...
+            </>
+          ) : (
+            "Save"
+          )}
+         
+         </button> </div>
           
         </form>
         </div>
