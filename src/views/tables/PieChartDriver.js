@@ -9,13 +9,13 @@ import { Pie } from "react-chartjs-2 "
 
 
 
-function PieChart() {
+function PieChartDriver() {
 
     const [parentsobject,setParents]=useState([])
   return (
-    <div className='bg-white border border-secondary'><Chart type="pie" series={[3,0]} options={{ 
+    <div className='bg-white border border-secondary'><Chart type="pie" series={[3,1]} options={{ 
       title:{
-        text:["Total =3","verify = 3" , "NotVerify =0"],
+        text:["Total =4","verify = 3" , "NotVerify =1"],
 
         
         
@@ -43,4 +43,4 @@ function PieChart() {
   )
 }
 
-export default PieChart
+export default PieChartDriver

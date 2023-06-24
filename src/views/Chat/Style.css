@@ -1,0 +1,229 @@
+.home {
+  background-color: #a7bcff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.home .cont {
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 65%;
+  height: 80%;
+  display: flex;
+  overflow: hidden;
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .home .cont {
+    width: 90%;
+  }
+}
+.home .cont .chatSidebar {
+  flex: 1;
+  background-color: #3e3c61;
+  position: relative;
+}
+.home .cont .chatSidebar .chatNavbar {
+  display: flex;
+  align-items: center;
+  background-color: #2f2d52;
+  height: 50px;
+  padding: 10px;
+  justify-content: space-between;
+  color: #ddddf7;
+}
+.home .cont .chatSidebar .chatNavbar .chatLogo {
+  font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .home .cont .chatSidebar .chatNavbar .chatLogo {
+    display: none;
+  }
+}
+.home .cont .chatSidebar .chatNavbar .chatUser {
+  display: flex;
+  gap: 10px;
+}
+.home .cont .chatSidebar .chatNavbar .chatUser img {
+  background-color: #ddddf7;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home .cont .chatSidebar .chatNavbar .chatUser button {
+  background-color: #5d5b8d;
+  color: #ddddf7;
+  width: 50px;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .home .cont .chatSidebar .chatNavbar .chatUser button {
+    position: absolute;
+    bottom: 10px;
+  }
+}
+.home .cont .chatSidebar .chatSearch {
+  border-bottom: 1px solid gray;
+}
+.home .cont .chatSidebar .chatSearch .chatSearchForm {
+  padding: 10px;
+}
+.home .cont .chatSidebar .chatSearch .chatSearchForm input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+}
+.home .cont .chatSidebar .chatSearch .chatSearchForm input::-moz-placeholder {
+  color: lightgray;
+}
+.home .cont .chatSidebar .chatSearch .chatSearchForm input:-ms-input-placeholder {
+  color: lightgray;
+}
+.home .cont .chatSidebar .chatSearch .chatSearchForm input::placeholder {
+  color: lightgray;
+}
+.home .cont .chatSidebar .chatUserChat {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+}
+.home .cont .chatSidebar .chatUserChat:hover {
+  background-color: #2f2d52;
+}
+.home .cont .chatSidebar .chatUserChat img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home .cont .chatSidebar .chatUserChat .chatUserChatInfo span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.home .cont .chatSidebar .chatUserChat .chatUserChatInfo p {
+  font-size: 14px;
+  color: lightgray;
+}
+.home .cont .chatChat {
+  flex: 2;
+}
+.home .cont .chatChat .chatChatInfo {
+  height: 50px;
+  background-color: #5d5b8d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: lightgray;
+}
+.home .cont .chatChat .chatIcons {
+  display: flex;
+  gap: 10px;
+}
+.home .cont .chatChat .chatIcons .Icon {
+  height: 40px;
+  width: 20px;
+  cursor: pointer;
+}
+.home .cont .chatChat .chatMessages {
+  background-color: #ddddf7;
+  padding: 10px;
+  height: calc(100% - 100px);
+  overflow: scroll;
+}
+.home .cont .chatChat .chatMessages .chatMessage {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.home .cont .chatChat .chatMessages .chatMessage .chatMessageInfo {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  font-weight: 300;
+}
+.home .cont .chatChat .chatMessages .chatMessage .chatMessageInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home .cont .chatChat .chatMessages .chatMessage .chatMessageContent {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.home .cont .chatChat .chatMessages .chatMessage .chatMessageContent p {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 0px 10px 10px 10px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.home .cont .chatChat .chatMessages .chatMessage .chatMessageContent img {
+  width: 50%;
+}
+.home .cont .chatChat .chatMessages .chatMessage.chatOwner {
+  flex-direction: row-reverse;
+}
+.home .cont .chatChat .chatMessages .chatMessage.chatOwner .chatMessageContent {
+  align-items: flex-end;
+}
+.home .cont .chatChat .chatMessages .chatMessage.chatOwner .chatMessageContent p {
+  background-color: #8da4f1;
+  color: white;
+  border-radius: 10px 0px 10px 10px;
+}
+.home .cont .chatChat .chatInput {
+  height: 50px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home .cont .chatChat .chatInput input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #2f2d52;
+  font-size: 18px;
+}
+.home .cont .chatChat .chatInput input::-moz-placeholder {
+  color: lightgrey;
+}
+.home .cont .chatChat .chatInput input:-ms-input-placeholder {
+  color: lightgrey;
+}
+.home .cont .chatChat .chatInput input::placeholder {
+  color: lightgrey;
+}
+.home .cont .chatChat .chatInput .chatSend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.home .cont .chatChat .chatInput .chatSend .icon {
+  height: 24px;
+  width: 20px;
+  cursor: pointer;
+}
+.home .cont .chatChat .chatInput .chatSend button {
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  background-color: #8da4f1;
+}/*# sourceMappingURL=Style.css.map */

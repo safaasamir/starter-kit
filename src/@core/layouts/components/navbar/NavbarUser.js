@@ -1,12 +1,13 @@
 // ** Dropdowns Imports
 import UserDropdown from "./UserDropdown"
 import NotificationDropdown from './NotificationDropdown'
-import Translate from "./translate"
+import IntlDropdown from "./IntlDropdown"
 const NavbarUser = () => {
   return (
     <ul className="nav navbar-nav align-items-center ms-auto">
     
-    <Translate/>
+    {//<IntlDropdown/>
+    }
     <NotificationDropdown/> 
     <UserDropdown />
     

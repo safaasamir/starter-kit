@@ -8,7 +8,7 @@ const themeConfig = {
 
   
   app: {
-    appName: 'Waslna',
+    appName: 'ًWaslna',
     appLogoImage: logo,
   },
   layout: {

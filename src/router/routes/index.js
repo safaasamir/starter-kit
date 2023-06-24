@@ -38,6 +38,8 @@ const Parents = lazy(() => import("../../views/Action/Parent"))
 const Add = lazy(() => import("../../views/Add/AddParents"))
 const AddDriver = lazy(() => import("../../views/Add/AddDriver"))
 const Driver = lazy(() => import("../../views/Action/Drivers"))
+const CheckDriver = lazy(() => import("../../views/Action/CheckDrivers"))
+const CheckDriverModal = lazy(() => import("../../views/tables/CheckDriverModal"))
 const Bus = lazy(() => import("../../views/Action/Bus"))
 const Plan = lazy(() => import("../../views/Action/Plan"))
 const Profile = lazy(() => import("../../views/Action/Editprofile"))
@@ -77,6 +79,14 @@ const Routes = [
   {
     path: "/driver",
     element: <Driver />
+  },
+  {
+    path: "/CheckDriver",
+    element: <CheckDriver/>
+  },
+  {
+    path: "/CheckDriverModal",
+    element: <CheckDriverModal/>
   },
   {
     path: "/edit-profile",

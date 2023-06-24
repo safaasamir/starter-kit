@@ -29,31 +29,32 @@ export default [
     icon: <Icon icon="fa6-solid:handshake" color="gray" width="50" height="50" />,
     navLink: "/plans-page"
   },
-  {
-    id: "CustomPlans",
-    title: "CustomPlans",
-    icon: <Icon icon="mdi:math-compass-variant" color="gray" width="50" height="50" />,
-    navLink: "/customplans-page"
-  },
+  // {
+  //   id: "CustomPlans",
+  //   title: "CustomPlans",
+  //   icon: <Icon icon="mdi:math-compass-variant" color="gray" width="50" height="50" />,
+  //   navLink: "/customplans-page"
+  // },
   
-  {
-    id: "PrivacyPolicy",
-    title: "PrivacyPolicy",
-    icon: <Icon icon="ic:twotone-privacy-tip" width="50" height="50" />,
-    navLink: "/privacy-page"
-  },
-  {
-    id: "Terms&Condition",
-    title: "Terms&Condition",
-    icon: <Icon icon="material-symbols:back-hand-outline-rounded" width="50" height="50" />,
-    navLink: "/term-page"
-  },
+  
+  // {
+  //   id: "Terms&Condition",
+  //   title: "Terms&Condition",
+  //   icon: <Icon icon="material-symbols:back-hand-outline-rounded" width="50" height="50" />,
+  //   navLink: "/term-page"
+  // },
  
   {
     id: "Drivers",
     title: "Drivers",
     icon: <User size={20} />,
     navLink: "/driver"
+  },
+  {
+    id: "CheckDrivers",
+    title: "CheckDrivers",
+    icon: <User size={20} />,
+    navLink: "/CheckDriver"
   },
   {
     id: "Parents",
@@ -66,7 +67,13 @@ export default [
     title: "Buses",
     icon: <Icon icon="bx:bus-school" width="50" height="50" />,
     navLink: "/bus-page"
-  }
+  },
+  {
+    id: "PrivacyPolicy",
+    title: "PrivacyPolicy",
+    icon: <Icon icon="ic:twotone-privacy-tip" width="50" height="50" />,
+    navLink: "/privacy-page"
+  },
   
  
 ]

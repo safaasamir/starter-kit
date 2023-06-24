@@ -2,7 +2,7 @@ import React from 'react'
 //import"bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
 
- import LineChat from './LineChat'
+ import PieChartDriver from './PieChartDriver'
  import PieChart  from './PieChart'
 
 function Dashboard() {
@@ -57,11 +57,13 @@ function Dashboard() {
                   
             </div>
             <div className='row'>
-            <div className='col-12 col-md-8 col-lg-8  p-3'>
-                <LineChat/>
-            </div>
-            <div className='col-12 col-md-6 col-lg-4 p-3'>
+            <div className='col-12 col-md-7 col-lg-6  p-3'>
+            <h2>Parents</h2>
             <PieChart/>
+            </div>
+            <div className='col-12 col-md-7 col-lg-6 p-3'>
+            <h2>Drivers</h2>
+            <PieChartDriver/>
             </div>
             </div>
 
